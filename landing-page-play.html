@@ -501,8 +501,8 @@ lucide.createIcons();
 const io=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 function handleSubmit(e){e.preventDefault();const b=e.target.querySelector('.btn-submit'),o=b.innerHTML;b.innerHTML='<span>תודה! נחזור אליכם מיד</span>';b.style.background='linear-gradient(135deg,#34D399,#10B981)';b.style.color='#fff';b.disabled=true;setTimeout(()=>{b.innerHTML=o;b.style.background='';b.style.color='';b.disabled=false;e.target.reset()},3500)}
-<div class="sticky-cta" id="sticky-cta"><a href="#lead-form" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'});return false"><i class="ic" data-lucide="gamepad-2"></i> בואו לשחק!</a></div>
 </script>
+<div class="sticky-cta" id="sticky-cta"><a href="#lead-form" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'});return false"><i class="ic" data-lucide="gamepad-2"></i> בואו לשחק!</a></div>
 <script>
 (function(){const bar=document.getElementById('sticky-cta'),form=document.getElementById('lead-form');const obs=new IntersectionObserver(([e])=>{bar.classList.toggle('show',!e.isIntersecting)},{threshold:0});obs.observe(form)})();
 </script>
