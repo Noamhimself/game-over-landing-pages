@@ -39,8 +39,8 @@
         @keyframes orbFloat{0%{transform:translate(0,0)}50%{transform:translate(40px,-30px)}100%{transform:translate(0,0)}}
         @keyframes orbFloat2{0%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}100%{transform:translate(0,0)}}
 
-        .reveal{opacity:0;transform:translateY(40px);transition:all .75s cubic-bezier(.22,1,.36,1)}
-        .reveal.visible{opacity:1;transform:translateY(0)}
+        .reveal{opacity:0;transform:translateY(40px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+        .reveal.visible{opacity:1 !important;transform:translateY(0) !important}
         .reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}.reveal-d4{transition-delay:.4s}.reveal-d5{transition-delay:.5s}
         .ic{display:inline-flex;align-items:center;justify-content:center}
 
@@ -550,6 +550,7 @@ window.addEventListener('load',checkReveals);
 checkReveals();
 setTimeout(checkReveals,100);
 setTimeout(checkReveals,500);
+setTimeout(function(){document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){el.classList.add('visible')})},2000);
 function handleSubmit(e){e.preventDefault();const b=e.target.querySelector('.btn-submit'),o=b.innerHTML;b.innerHTML='<span>תודה! נחזור אליכם מיד</span>';b.style.background='linear-gradient(135deg,#34D399,#10B981)';b.disabled=true;setTimeout(()=>{b.innerHTML=o;b.style.background='';b.disabled=false;e.target.reset()},3500)}
 </script>
 <div class="sticky-cta" id="sticky-cta"><a href="#lead-form" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'});return false"><i class="ic" data-lucide="party-popper"></i> שריינו יום הולדת!</a></div>
