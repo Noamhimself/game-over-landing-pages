@@ -165,22 +165,22 @@
         .inc-card p{color:rgba(255,255,255,.45);font-size:.85rem;line-height:1.5}
 
         /* CAKE */
-        .cake-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:55px;align-items:center}
-        .cake-visual{border-radius:28px;background:linear-gradient(145deg,rgba(255,45,120,.04),rgba(255,210,63,.06));border:2px dashed rgba(255,45,120,.2);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px 20px;transition:border-color .3s;position:relative;z-index:1}
-        .cake-visual:hover{border-color:var(--pink)}
-        .cake-visual img{width:70%;max-width:240px;border-radius:18px;object-fit:cover}
-        .cake-visual .cake-label{font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.1rem;color:var(--pink);margin-top:14px}
-        .cake-text{position:relative;z-index:1}
-        .cake-text h3{font-family:'Fredoka',sans-serif;font-weight:700;font-size:2.2rem;line-height:1.3;margin-bottom:16px;color:var(--deep)}
-        .cake-text h3 em{color:var(--pink);font-style:normal}
-        .cake-text>p{font-size:1.05rem;line-height:1.8;color:#5A4A6A;margin-bottom:24px}
-        .strike-list{list-style:none}
-        .strike-list li{padding:12px 0;border-bottom:1px solid rgba(0,0,0,.05);display:flex;align-items:center;gap:12px;font-size:1rem}
-        .strike-list li:last-child{border-bottom:none}
-        .strike-list .old{text-decoration:line-through;color:#bbb}
-        .strike-list .arrow{display:flex;color:var(--pink)}
-        .strike-list .arrow svg{width:18px;height:18px}
-        .strike-list .new{color:var(--mint);font-weight:700}
+        .vs-section{text-align:center;position:relative;z-index:1}
+        .vs-section h3{font-family:'Fredoka',sans-serif;font-weight:700;font-size:2.8rem;line-height:1.25;margin-bottom:20px;color:var(--deep)}
+        .vs-section h3 em{color:var(--pink);font-style:normal}
+        .vs-section>p{font-size:1.15rem;line-height:1.8;color:#5A4A6A;margin-bottom:45px;max-width:600px;margin-left:auto;margin-right:auto}
+        .vs-boxes{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:900px;margin:0 auto}
+        .vs-box{border-radius:20px;padding:32px 28px;text-align:right}
+        .vs-box-good{background:rgba(52,211,153,.06);border:2px solid var(--mint)}
+        .vs-box-bad{background:rgba(255,45,120,.04);border:2px solid rgba(255,45,120,.35)}
+        .vs-box h4{font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.4rem;margin-bottom:22px;color:var(--deep)}
+        .vs-box-good h4{color:var(--mint)}
+        .vs-box-bad h4{color:var(--pink)}
+        .vs-item{display:flex;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:1.05rem;color:var(--deep);line-height:1.5}
+        .vs-item:last-child{border-bottom:none}
+        .vs-icon{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem;font-weight:700}
+        .vs-box-good .vs-icon{background:var(--mint);color:#fff}
+        .vs-box-bad .vs-icon{background:var(--pink);color:#fff}
 
         /* COMPARISON */
         .cmp-table{width:100%;border-collapse:separate;border-spacing:0;border-radius:20px;overflow:hidden;box-shadow:0 12px 50px rgba(0,0,0,.06);position:relative;z-index:1}
@@ -288,13 +288,8 @@
             .sec{padding:60px 20px}
             .sec-title{font-size:2rem}
             .inc-grid{grid-template-columns:repeat(2,1fr)}
-            .cake-grid{grid-template-columns:1fr;gap:30px}
-            .cake-visual{max-width:320px;margin:0 auto;aspect-ratio:auto}
-            .cake-visual img{border-radius:16px}
-            .cake-text{text-align:center}
-            .cake-text h3{font-size:1.8rem;text-align:center}
-            .cake-text>p{text-align:center}
-            .strike-list{max-width:420px;margin:0 auto}
+            .vs-section h3{font-size:2.2rem}
+            .vs-boxes{grid-template-columns:1fr 1fr;gap:18px}
             .steps-row{grid-template-columns:1fr 1fr;gap:14px}
             .gal-grid{grid-template-columns:1fr 1fr;gap:10px}
             .reviews-grid{grid-template-columns:1fr;gap:14px}
@@ -327,9 +322,13 @@
             .inc-icon svg{width:22px;height:22px}
             .inc-card h3{font-size:.92rem}
             .inc-card p{font-size:.78rem}
-            .cake-text h3{font-size:1.6rem}
-            .strike-list li{font-size:.9rem;gap:8px}
-            .strike-list .arrow svg{width:14px;height:14px}
+            .vs-section h3{font-size:1.8rem}
+            .vs-section>p{font-size:1rem}
+            .vs-boxes{grid-template-columns:1fr;gap:20px}
+            .vs-box{padding:24px 20px}
+            .vs-box h4{font-size:1.2rem}
+            .vs-item{font-size:.95rem;gap:10px}
+            .vs-icon{width:28px;height:28px;font-size:.85rem}
             .steps-row{grid-template-columns:1fr;gap:12px}
             .step{padding:22px 14px 18px}
             .step-circle{width:50px;height:50px;font-size:1.2rem}
@@ -439,18 +438,26 @@
 
 <section class="sec sec-light">
     <div class="sec-inner">
-        <div class="cake-grid">
-            <div class="cake-visual reveal"><img src="Images/cake.png" alt="עוגת יום הולדת מעוצבת"><span class="cake-label">...זה כל מה שצריך להביא</span></div>
-            <div class="cake-text">
-                <h3 class="reveal">אתם רק מביאים <em>עוגה</em>.<br>אנחנו עושים את <em>הכל</em>.</h3>
-                <p class="reveal reveal-d1">שכחו מלרוץ בין חנויות, להזמין אוכל, לקשט, לנקות... אנחנו מטפלים בכל פרט. אתם מגיעים, נהנים, והולכים הביתה.</p>
-                <ul class="strike-list reveal reveal-d2">
-                    <li><span class="old">לקשט את החדר</span><span class="arrow"><i data-lucide="arrow-left" aria-hidden="true"></i></span><span class="new">אנחנו מקשטים</span></li>
-                    <li><span class="old">להזמין אוכל ושתייה</span><span class="arrow"><i data-lucide="arrow-left" aria-hidden="true"></i></span><span class="new">כלול במחיר</span></li>
-                    <li><span class="old">לנהל את הילדים</span><span class="arrow"><i data-lucide="arrow-left" aria-hidden="true"></i></span><span class="new">מנהל אירוע מסור</span></li>
-                    <li><span class="old">להכין משחקים והפעלות</span><span class="arrow"><i data-lucide="arrow-left" aria-hidden="true"></i></span><span class="new">עשרות מכונות ארקייד</span></li>
-                    <li><span class="old">לנקות אחרי</span><span class="arrow"><i data-lucide="arrow-left" aria-hidden="true"></i></span><span class="new">אנחנו מנקים. אתם הולכים</span></li>
-                </ul>
+        <div class="vs-section">
+            <h3 class="reveal">אתם רק מביאים <em>עוגה</em>.<br>אנחנו עושים את <em>הכל</em>.</h3>
+            <p class="reveal reveal-d1">שכחו מלרוץ בין חנויות, להזמין אוכל, לקשט, לנקות...<br>אנחנו מטפלים בכל פרט. אתם מגיעים, נהנים, והולכים הביתה.</p>
+            <div class="vs-boxes">
+                <div class="vs-box vs-box-good reveal reveal-d1">
+                    <h4>GAME OVER</h4>
+                    <div class="vs-item"><span class="vs-icon">✓</span>אנחנו מקשטים את החדר</div>
+                    <div class="vs-item"><span class="vs-icon">✓</span>אוכל ושתייה כלולים במחיר</div>
+                    <div class="vs-item"><span class="vs-icon">✓</span>מנהל אירוע מסור מלווה אתכם</div>
+                    <div class="vs-item"><span class="vs-icon">✓</span>עשרות מכונות ארקייד</div>
+                    <div class="vs-item"><span class="vs-icon">✓</span>אנחנו מנקים. אתם הולכים</div>
+                </div>
+                <div class="vs-box vs-box-bad reveal reveal-d2">
+                    <h4>מקומות אחרים</h4>
+                    <div class="vs-item"><span class="vs-icon">✗</span>אתם מקשטים לבד</div>
+                    <div class="vs-item"><span class="vs-icon">✗</span>משלמים על כל דבר בנפרד</div>
+                    <div class="vs-item"><span class="vs-icon">✗</span>אתם לבד עם 15 ילדים</div>
+                    <div class="vs-item"><span class="vs-icon">✗</span>ציוד ישן ולא מתוחזק</div>
+                    <div class="vs-item"><span class="vs-icon">✗</span>לנקות אחרי? בהצלחה</div>
+                </div>
             </div>
         </div>
     </div>
