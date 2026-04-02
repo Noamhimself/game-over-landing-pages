@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ימי הולדת ב-GAME OVER ב-65 שקלים לאדם בלבד. חדר פרטי, אוכל ושתייה, משחקים, מנהל אירוע, ומתנת ביקור חוזר. 9 סניפים ברחבי הארץ.">
+    <meta property="og:title" content="GAME OVER | ימי הולדת ב-65 ₪ לאדם — הכל כלול">
+    <meta property="og:description" content="יום הולדת מושלם לילדים ב-65 שקלים בלבד. חדר פרטי, אוכל, שתייה, משחקים ומנהל אירוע. אתם רק מביאים עוגה!">
+    <meta property="og:type" content="website">
     <title>GAME OVER | ימי הולדת ב-65 ₪</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
@@ -19,6 +23,10 @@
         *{margin:0;padding:0;box-sizing:border-box}
         html{scroll-behavior:smooth}
         body{font-family:'Heebo',sans-serif;background:var(--deep);color:#fff;overflow-x:hidden;max-width:100vw;-webkit-font-smoothing:antialiased;direction:rtl;text-align:right}
+
+        /* SKIP LINK */
+        .skip-link{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--pink);color:#fff;padding:12px 24px;border-radius:0 0 8px 8px;z-index:10000;font-weight:700;text-decoration:none;font-size:1rem;transition:top .2s}
+        .skip-link:focus{top:0}
 
         /* GRAIN OVERLAY */
         body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.03;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
@@ -100,6 +108,8 @@
         .form-urgency .ic svg{width:13px;height:13px}
         .form-heading{font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.55rem;text-align:center;margin-bottom:4px}
         .form-sub{text-align:center;color:#777;font-size:.9rem;margin-bottom:22px}
+        .social-proof{text-align:center;font-size:.82rem;color:var(--purple);font-weight:700;margin-bottom:16px;display:flex;align-items:center;justify-content:center;gap:6px}
+        .social-proof .ic svg{width:15px;height:15px;color:var(--purple)}
         .field{margin-bottom:14px}
         .field label{display:flex;align-items:center;gap:6px;font-weight:700;font-size:.85rem;margin-bottom:6px;color:var(--deep)}
         .field label .ic svg{width:15px;height:15px;color:var(--purple)}
@@ -109,10 +119,14 @@
         .btn-submit{width:100%;padding:17px;background:linear-gradient(135deg,var(--pink),#D91A60);border:none;border-radius:14px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.3rem;color:#fff;cursor:pointer;transition:all .35s cubic-bezier(.22,1,.36,1);margin-top:4px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:8px}
         .btn-submit::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.12) 50%,transparent 70%);background-size:200% 100%;animation:shimmer 2.5s linear infinite}
         .btn-submit:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(255,45,120,.35)}
+        .btn-submit:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
         .btn-submit .ic,.btn-submit span{position:relative;z-index:1}
         .form-fine{text-align:center;font-size:.78rem;color:#999;margin-top:12px;display:flex;align-items:center;justify-content:center;gap:5px}
         .form-fine b{color:var(--mint)}
         .form-fine .ic svg{width:13px;height:13px;color:#999}
+
+        /* FOCUS STYLES FOR INTERACTIVE ELEMENTS */
+        a:focus-visible,.pill:focus-visible,.loc:focus-visible,.cta-big:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
 
         /* SECTIONS */
         .sec{padding:90px 24px;position:relative}
@@ -203,6 +217,10 @@
         .gal-item:hover img{transform:scale(1.08)}
 
         /* TESTIMONIALS */
+        .video-testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px}
+        .video-card{border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.12)}
+        .video-card wistia-player{display:block;width:100%}
+        wistia-player[media-id='fv6amrlo3n']:not(:defined),wistia-player[media-id='0xodg8utqw']:not(:defined),wistia-player[media-id='zr7tkennap']:not(:defined){background:center/contain no-repeat;display:block;filter:blur(5px);padding-top:177.78%}
         .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
         .review{background:rgba(255,255,255,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:20px;padding:30px 24px;box-shadow:0 8px 35px rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.04);transition:all .35s;text-align:right;position:relative;z-index:1}
         .review:hover{transform:translateY(-5px);box-shadow:0 14px 45px rgba(0,0,0,.08)}
@@ -245,9 +263,17 @@
         .final-cta p{font-size:1.1rem;color:rgba(12,1,24,.5);margin-bottom:32px}
         .cta-big{display:inline-flex;align-items:center;gap:10px;padding:18px 48px;background:var(--pink);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.3rem;border-radius:60px;text-decoration:none;transition:all .35s;border:none;cursor:pointer;box-shadow:0 8px 30px rgba(255,45,120,.3)}
         .cta-big:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(255,45,120,.4)}
+        .cta-big:focus-visible{outline:3px solid var(--deep);outline-offset:2px}
         .cta-big .ic svg{width:22px;height:22px}
 
         footer{background:var(--deep);text-align:center;padding:28px 24px;color:rgba(255,255,255,.2);font-size:.82rem;border-top:1px solid rgba(255,255,255,.05)}
+
+        /* STICKY CTA */
+        .sticky-cta{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,var(--pink),var(--purple));padding:14px 20px;text-align:center;z-index:9999;transform:translateY(100%);transition:transform .35s ease;box-shadow:0 -4px 20px rgba(0,0,0,.3)}
+        .sticky-cta.show{transform:translateY(0)}
+        .sticky-cta a{color:#fff;font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.2rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+        .sticky-cta a .ic svg{width:20px;height:20px}
+        .sticky-cta a:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
 
         /* TABLET */
         @media(max-width:1024px){
@@ -277,6 +303,7 @@
             .cmp-table th,.cmp-table td{padding:12px 10px;font-size:.85rem}
             .prizes-grid{grid-template-columns:1fr}
             .parents-grid{grid-template-columns:1fr}
+            .video-testimonials{grid-template-columns:repeat(3,1fr);gap:14px}
         }
         /* MOBILE */
         @media(max-width:600px){
@@ -324,48 +351,43 @@
             .cmp-table{font-size:.8rem;border-radius:14px}
             .cmp-table th{padding:14px 8px;font-size:.85rem}
             .cmp-table td{padding:12px 8px;font-size:.8rem}
+            .video-testimonials{grid-template-columns:1fr;max-width:300px;margin:0 auto 30px}
         }
-        .video-testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px}
-        .video-card{border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.12)}
-        .video-card wistia-player{display:block;width:100%}
-        wistia-player[media-id='fv6amrlo3n']:not(:defined),wistia-player[media-id='0xodg8utqw']:not(:defined),wistia-player[media-id='zr7tkennap']:not(:defined){background:center/contain no-repeat;display:block;filter:blur(5px);padding-top:177.78%}
-        @media(max-width:1024px){.video-testimonials{grid-template-columns:repeat(3,1fr);gap:14px}}
-        @media(max-width:600px){.video-testimonials{grid-template-columns:1fr;max-width:300px;margin:0 auto 30px}}
-        .sticky-cta{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,var(--pink),var(--purple));padding:14px 20px;text-align:center;z-index:9999;transform:translateY(100%);transition:transform .35s ease;box-shadow:0 -4px 20px rgba(0,0,0,.3)}
-        .sticky-cta.show{transform:translateY(0)}
-        .sticky-cta a{color:#fff;font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.2rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
-        .sticky-cta a .ic svg{width:20px;height:20px}
     </style>
 </head>
 <body>
 
-<div class="ticker"><div class="ticker-track">
-    <span class="ticker-item"><i class="ic" data-lucide="cake"></i>ימי הולדת ב-65 ₪ לאדם בלבד</span>
-    <span class="ticker-item"><i class="ic" data-lucide="sparkles"></i>כל ההכנות עלינו — אתם רק מביאים עוגה</span>
-    <span class="ticker-item"><i class="ic" data-lucide="map-pin"></i>9 סניפים בקניונים ברחבי הארץ</span>
-    <span class="ticker-item"><i class="ic" data-lucide="ticket"></i>כרטיס ביקור חוזר חינם לכל מוזמן</span>
-    <span class="ticker-item"><i class="ic" data-lucide="cake"></i>ימי הולדת ב-65 ₪ לאדם בלבד</span>
-    <span class="ticker-item"><i class="ic" data-lucide="sparkles"></i>כל ההכנות עלינו — אתם רק מביאים עוגה</span>
-    <span class="ticker-item"><i class="ic" data-lucide="map-pin"></i>9 סניפים בקניונים ברחבי הארץ</span>
-    <span class="ticker-item"><i class="ic" data-lucide="ticket"></i>כרטיס ביקור חוזר חינם לכל מוזמן</span>
-    <span class="ticker-item"><i class="ic" data-lucide="cake"></i>ימי הולדת ב-65 ₪ לאדם בלבד</span>
-    <span class="ticker-item"><i class="ic" data-lucide="sparkles"></i>כל ההכנות עלינו — אתם רק מביאים עוגה</span>
-    <span class="ticker-item"><i class="ic" data-lucide="map-pin"></i>9 סניפים בקניונים ברחבי הארץ</span>
-    <span class="ticker-item"><i class="ic" data-lucide="ticket"></i>כרטיס ביקור חוזר חינם לכל מוזמן</span>
-    <span class="ticker-item"><i class="ic" data-lucide="cake"></i>ימי הולדת ב-65 ₪ לאדם בלבד</span>
-    <span class="ticker-item"><i class="ic" data-lucide="sparkles"></i>כל ההכנות עלינו — אתם רק מביאים עוגה</span>
-    <span class="ticker-item"><i class="ic" data-lucide="map-pin"></i>9 סניפים בקניונים ברחבי הארץ</span>
-    <span class="ticker-item"><i class="ic" data-lucide="ticket"></i>כרטיס ביקור חוזר חינם לכל מוזמן</span>
+<a href="#main-content" class="skip-link">דלג לתוכן הראשי</a>
+
+<div class="ticker" role="banner" aria-label="מבצעים והטבות"><div class="ticker-track">
+    <span class="ticker-item"><i class="ic" data-lucide="cake" aria-hidden="true"></i>ימי הולדת ב-65 ₪ לאדם בלבד</span>
+    <span class="ticker-item"><i class="ic" data-lucide="sparkles" aria-hidden="true"></i>כל ההכנות עלינו — אתם רק מביאים עוגה</span>
+    <span class="ticker-item"><i class="ic" data-lucide="map-pin" aria-hidden="true"></i>9 סניפים בקניונים ברחבי הארץ</span>
+    <span class="ticker-item"><i class="ic" data-lucide="ticket" aria-hidden="true"></i>כרטיס ביקור חוזר חינם לכל מוזמן</span>
+    <span class="ticker-item"><i class="ic" data-lucide="cake" aria-hidden="true"></i>ימי הולדת ב-65 ₪ לאדם בלבד</span>
+    <span class="ticker-item"><i class="ic" data-lucide="sparkles" aria-hidden="true"></i>כל ההכנות עלינו — אתם רק מביאים עוגה</span>
+    <span class="ticker-item"><i class="ic" data-lucide="map-pin" aria-hidden="true"></i>9 סניפים בקניונים ברחבי הארץ</span>
+    <span class="ticker-item"><i class="ic" data-lucide="ticket" aria-hidden="true"></i>כרטיס ביקור חוזר חינם לכל מוזמן</span>
+    <span class="ticker-item"><i class="ic" data-lucide="cake" aria-hidden="true"></i>ימי הולדת ב-65 ₪ לאדם בלבד</span>
+    <span class="ticker-item"><i class="ic" data-lucide="sparkles" aria-hidden="true"></i>כל ההכנות עלינו — אתם רק מביאים עוגה</span>
+    <span class="ticker-item"><i class="ic" data-lucide="map-pin" aria-hidden="true"></i>9 סניפים בקניונים ברחבי הארץ</span>
+    <span class="ticker-item"><i class="ic" data-lucide="ticket" aria-hidden="true"></i>כרטיס ביקור חוזר חינם לכל מוזמן</span>
+    <span class="ticker-item"><i class="ic" data-lucide="cake" aria-hidden="true"></i>ימי הולדת ב-65 ₪ לאדם בלבד</span>
+    <span class="ticker-item"><i class="ic" data-lucide="sparkles" aria-hidden="true"></i>כל ההכנות עלינו — אתם רק מביאים עוגה</span>
+    <span class="ticker-item"><i class="ic" data-lucide="map-pin" aria-hidden="true"></i>9 סניפים בקניונים ברחבי הארץ</span>
+    <span class="ticker-item"><i class="ic" data-lucide="ticket" aria-hidden="true"></i>כרטיס ביקור חוזר חינם לכל מוזמן</span>
 </div></div>
 
-<section class="hero" id="top">
-    <div class="hero-mesh">
+<main id="main-content">
+
+<header class="hero" id="top">
+    <div class="hero-mesh" aria-hidden="true">
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
         <div class="orb orb-3"></div>
         <div class="grid-overlay"></div>
     </div>
-    <div class="confetti-piece"></div><div class="confetti-piece"></div><div class="confetti-piece"></div><div class="confetti-piece"></div><div class="confetti-piece"></div><div class="confetti-piece"></div>
+    <div class="confetti-piece" aria-hidden="true"></div><div class="confetti-piece" aria-hidden="true"></div><div class="confetti-piece" aria-hidden="true"></div><div class="confetti-piece" aria-hidden="true"></div><div class="confetti-piece" aria-hidden="true"></div><div class="confetti-piece" aria-hidden="true"></div>
 
     <div class="hero-wrap">
         <div class="hero-title">
@@ -373,15 +395,16 @@
             <p class="hero-desc">תביאו את העוגה — ואנחנו נדאג לכל השאר. חדר פרטי, אוכל, שתייה, משחקים, מנהל אירוע, ומתנת ביקור חוזר לכל מוזמן!</p>
         </div>
         <div class="form-card" id="lead-form">
-            <div class="form-urgency"><i class="ic" data-lucide="flame"></i> מקומות מוגבלים</div>
+            <div class="form-urgency"><i class="ic" data-lucide="flame" aria-hidden="true"></i> מקומות מוגבלים</div>
             <div class="form-heading">שריינו יום הולדת!</div>
             <div class="form-sub">השאירו פרטים ונחזור אליכם תוך דקות</div>
-            <form onsubmit="handleSubmit(event)">
-                <div class="field"><label><i class="ic" data-lucide="user"></i> שם מלא</label><input type="text" id="fname" placeholder="הכניסו את השם שלכם" required></div>
-                <div class="field"><label><i class="ic" data-lucide="phone"></i> טלפון</label><input type="tel" id="phone" placeholder="050-0000000" required></div>
-                <button type="submit" class="btn-submit"><i class="ic" data-lucide="party-popper"></i><span>שריינו מקום!</span></button>
+            <div class="social-proof"><i class="ic" data-lucide="users" aria-hidden="true"></i> 2,400+ הורים כבר בחרו בנו</div>
+            <form onsubmit="handleSubmit(event)" aria-label="טופס הרשמה ליום הולדת">
+                <div class="field"><label for="fname"><i class="ic" data-lucide="user" aria-hidden="true"></i> שם מלא</label><input type="text" id="fname" placeholder="הכניסו את השם שלכם" required autofocus></div>
+                <div class="field"><label for="phone"><i class="ic" data-lucide="phone" aria-hidden="true"></i> טלפון</label><input type="tel" id="phone" placeholder="050-0000000" required inputmode="tel" pattern="[\d\-+]{9,15}"></div>
+                <button type="submit" class="btn-submit"><i class="ic" data-lucide="party-popper" aria-hidden="true"></i><span>שריינו מקום!</span></button>
             </form>
-            <div class="form-fine"><i class="ic" data-lucide="lock"></i> הפרטים שלכם בטוחים · <b>נחזור תוך 2 דקות</b></div>
+            <div class="form-fine"><i class="ic" data-lucide="lock" aria-hidden="true"></i> הפרטים שלכם בטוחים · <b>נחזור תוך 2 דקות</b></div>
         </div>
         <div class="hero-extras">
             <div class="price-highlight">
@@ -389,27 +412,27 @@
                 <div class="price-meta"><strong>לאדם · הכל כלול</strong>אפס הפתעות. אפס תוספות.</div>
             </div>
             <div class="hero-pills">
-                <span class="pill"><i class="ic" data-lucide="utensils"></i> אוכל ושתייה כלול</span>
-                <span class="pill"><i class="ic" data-lucide="gamepad-2"></i> כרטיס משחק לכל מוזמן</span>
-                <span class="pill"><i class="ic" data-lucide="clock"></i> שעתיים של כיף</span>
+                <span class="pill"><i class="ic" data-lucide="utensils" aria-hidden="true"></i> אוכל ושתייה כלול</span>
+                <span class="pill"><i class="ic" data-lucide="gamepad-2" aria-hidden="true"></i> כרטיס משחק לכל מוזמן</span>
+                <span class="pill"><i class="ic" data-lucide="clock" aria-hidden="true"></i> שעתיים של כיף</span>
             </div>
         </div>
     </div>
-</section>
+</header>
 
 <section class="sec sec-dark">
     <div class="sec-inner">
         <h2 class="sec-title reveal">מה כלול ב-65 ₪ לאדם?</h2>
         <p class="sec-sub reveal reveal-d1">הכל. פשוט הכל. אתם רק מביאים עוגה.</p>
         <div class="inc-grid">
-            <div class="inc-card reveal reveal-d1"><div class="inc-icon"><i data-lucide="door-open"></i></div><h3>חדר פרטי</h3><p>חדר יום הולדת מעוצב ומוכן רק בשבילכם</p></div>
-            <div class="inc-card reveal reveal-d2"><div class="inc-icon"><i data-lucide="utensils"></i></div><h3>אוכל ושתייה</h3><p>אוכל טעים ושתייה לכל המוזמנים — כלול</p></div>
-            <div class="inc-card reveal reveal-d2"><div class="inc-icon"><i data-lucide="gamepad-2"></i></div><h3>כרטיס משחק</h3><p>כרטיס טעון עם קרדיט לכל מוזמן</p></div>
-            <div class="inc-card reveal reveal-d3"><div class="inc-icon"><i data-lucide="headset"></i></div><h3>מנהל/ת אירוע</h3><p>דואג/ת להכל מההתחלה עד הסוף</p></div>
-            <div class="inc-card reveal reveal-d3"><div class="inc-icon"><i data-lucide="party-popper"></i></div><h3>עיצוב וקישוטים</h3><p>החדר מוכן כשאתם מגיעים</p></div>
-            <div class="inc-card reveal reveal-d4"><div class="inc-icon"><i data-lucide="ticket"></i></div><h3>מתנת ביקור חוזר</h3><p>כל מוזמן מקבל קרדיט חינם לביקור נוסף!</p></div>
-            <div class="inc-card reveal reveal-d4"><div class="inc-icon"><i data-lucide="timer"></i></div><h3>שעתיים של כיף</h3><p>משחקים, אוכל ובילוי ללא הפסקה</p></div>
-            <div class="inc-card reveal reveal-d5"><div class="inc-icon"><i data-lucide="heart-handshake"></i></div><h3>אפס דאגות</h3><p>אנחנו מטפלים בהכל. רק תביאו עוגה!</p></div>
+            <div class="inc-card reveal reveal-d1"><div class="inc-icon"><i data-lucide="door-open" aria-hidden="true"></i></div><h3>חדר פרטי</h3><p>חדר יום הולדת מעוצב ומוכן רק בשבילכם</p></div>
+            <div class="inc-card reveal reveal-d2"><div class="inc-icon"><i data-lucide="utensils" aria-hidden="true"></i></div><h3>אוכל ושתייה</h3><p>אוכל טעים ושתייה לכל המוזמנים — כלול</p></div>
+            <div class="inc-card reveal reveal-d2"><div class="inc-icon"><i data-lucide="gamepad-2" aria-hidden="true"></i></div><h3>כרטיס משחק</h3><p>כרטיס טעון עם קרדיט לכל מוזמן</p></div>
+            <div class="inc-card reveal reveal-d3"><div class="inc-icon"><i data-lucide="headset" aria-hidden="true"></i></div><h3>מנהל/ת אירוע</h3><p>דואג/ת להכל מההתחלה עד הסוף</p></div>
+            <div class="inc-card reveal reveal-d3"><div class="inc-icon"><i data-lucide="party-popper" aria-hidden="true"></i></div><h3>עיצוב וקישוטים</h3><p>החדר מוכן כשאתם מגיעים</p></div>
+            <div class="inc-card reveal reveal-d4"><div class="inc-icon"><i data-lucide="ticket" aria-hidden="true"></i></div><h3>מתנת ביקור חוזר</h3><p>כל מוזמן מקבל קרדיט חינם לביקור נוסף!</p></div>
+            <div class="inc-card reveal reveal-d4"><div class="inc-icon"><i data-lucide="timer" aria-hidden="true"></i></div><h3>שעתיים של כיף</h3><p>משחקים, אוכל ובילוי ללא הפסקה</p></div>
+            <div class="inc-card reveal reveal-d5"><div class="inc-icon"><i data-lucide="heart-handshake" aria-hidden="true"></i></div><h3>אפס דאגות</h3><p>אנחנו מטפלים בהכל. רק תביאו עוגה!</p></div>
         </div>
     </div>
 </section>
@@ -417,16 +440,16 @@
 <section class="sec sec-light">
     <div class="sec-inner">
         <div class="cake-grid">
-            <div class="cake-visual reveal"><img src="Images/cake.png" alt="עוגת יום הולדת"><span class="cake-label">...זה כל מה שצריך להביא</span></div>
+            <div class="cake-visual reveal"><img src="Images/cake.png" alt="עוגת יום הולדת מעוצבת"><span class="cake-label">...זה כל מה שצריך להביא</span></div>
             <div class="cake-text">
                 <h3 class="reveal">אתם רק מביאים <em>עוגה</em>.<br>אנחנו עושים את <em>הכל</em>.</h3>
                 <p class="reveal reveal-d1">שכחו מלרוץ בין חנויות, להזמין אוכל, לקשט, לנקות... אנחנו מטפלים בכל פרט. אתם מגיעים, נהנים, והולכים הביתה.</p>
                 <ul class="strike-list reveal reveal-d2">
-                    <li><span class="old">לקשט את החדר</span><span class="arrow"><i data-lucide="arrow-left"></i></span><span class="new">אנחנו מקשטים</span></li>
-                    <li><span class="old">להזמין אוכל ושתייה</span><span class="arrow"><i data-lucide="arrow-left"></i></span><span class="new">כלול במחיר</span></li>
-                    <li><span class="old">לנהל את הילדים</span><span class="arrow"><i data-lucide="arrow-left"></i></span><span class="new">מנהל אירוע מסור</span></li>
-                    <li><span class="old">להכין משחקים והפעלות</span><span class="arrow"><i data-lucide="arrow-left"></i></span><span class="new">עשרות מכונות ארקייד</span></li>
-                    <li><span class="old">לנקות אחרי</span><span class="arrow"><i data-lucide="arrow-left"></i></span><span class="new">אנחנו מנקים. אתם הולכים</span></li>
+                    <li><span class="old">לקשט את החדר</span><span class="arrow"><i data-lucide="arrow-left" aria-hidden="true"></i></span><span class="new">אנחנו מקשטים</span></li>
+                    <li><span class="old">להזמין אוכל ושתייה</span><span class="arrow"><i data-lucide="arrow-left" aria-hidden="true"></i></span><span class="new">כלול במחיר</span></li>
+                    <li><span class="old">לנהל את הילדים</span><span class="arrow"><i data-lucide="arrow-left" aria-hidden="true"></i></span><span class="new">מנהל אירוע מסור</span></li>
+                    <li><span class="old">להכין משחקים והפעלות</span><span class="arrow"><i data-lucide="arrow-left" aria-hidden="true"></i></span><span class="new">עשרות מכונות ארקייד</span></li>
+                    <li><span class="old">לנקות אחרי</span><span class="arrow"><i data-lucide="arrow-left" aria-hidden="true"></i></span><span class="new">אנחנו מנקים. אתם הולכים</span></li>
                 </ul>
             </div>
         </div>
@@ -456,10 +479,10 @@
         <h2 class="sec-title reveal">איך זה עובד?</h2>
         <p class="sec-sub reveal reveal-d1">4 צעדים פשוטים ליום הולדת מושלם</p>
         <div class="steps-row">
-            <div class="step reveal reveal-d1"><div class="step-circle">1</div><div class="step-ic"><i data-lucide="clipboard-pen"></i></div><h3>משאירים פרטים</h3><p>ממלאים טופס ומקבלים שיחה תוך דקות</p></div>
-            <div class="step reveal reveal-d2"><div class="step-circle">2</div><div class="step-ic"><i data-lucide="calendar"></i></div><h3>בוחרים תאריך וסניף</h3><p>קובעים תאריך ובוחרים מ-9 סניפים</p></div>
-            <div class="step reveal reveal-d3"><div class="step-circle">3</div><div class="step-ic"><i data-lucide="cake"></i></div><h3>מגיעים עם עוגה</h3><p>זה באמת כל מה שצריך להביא</p></div>
-            <div class="step reveal reveal-d4"><div class="step-circle">4</div><div class="step-ic"><i data-lucide="party-popper"></i></div><h3>אנחנו עושים את השאר</h3><p>אוכל, משחקים, קישוטים — הכל עלינו</p></div>
+            <div class="step reveal reveal-d1"><div class="step-circle">1</div><div class="step-ic"><i data-lucide="clipboard-pen" aria-hidden="true"></i></div><h3>משאירים פרטים</h3><p>ממלאים טופס ומקבלים שיחה תוך דקות</p></div>
+            <div class="step reveal reveal-d2"><div class="step-circle">2</div><div class="step-ic"><i data-lucide="calendar" aria-hidden="true"></i></div><h3>בוחרים תאריך וסניף</h3><p>קובעים תאריך ובוחרים מ-9 סניפים</p></div>
+            <div class="step reveal reveal-d3"><div class="step-circle">3</div><div class="step-ic"><i data-lucide="cake" aria-hidden="true"></i></div><h3>מגיעים עם עוגה</h3><p>זה באמת כל מה שצריך להביא</p></div>
+            <div class="step reveal reveal-d4"><div class="step-circle">4</div><div class="step-ic"><i data-lucide="party-popper" aria-hidden="true"></i></div><h3>אנחנו עושים את השאר</h3><p>אוכל, משחקים, קישוטים — הכל עלינו</p></div>
         </div>
     </div>
 </section>
@@ -469,10 +492,10 @@
         <h2 class="sec-title reveal">הציצו פנימה</h2>
         <p class="sec-sub reveal reveal-d1">ככה נראה יום הולדת ב-GAME OVER</p>
         <div class="gal-grid">
-            <div class="gal-item reveal reveal-d1"><img src="Images/475328224_17894261136150335_3862051142677640048_n.jpg" alt=""></div>
-            <div class="gal-item reveal reveal-d2"><img src="Images/476142902_17895257520150335_372497690850065485_n.jpg" alt=""></div>
-            <div class="gal-item reveal reveal-d3"><img src="Images/480949302_17897234910150335_823365993114622632_n.jpg" alt=""></div>
-            <div class="gal-item reveal reveal-d4"><img src="Images/518313876_122182395986326828_7868823664593536286_n.jpg" alt=""></div>
+            <div class="gal-item reveal reveal-d1"><img src="Images/475328224_17894261136150335_3862051142677640048_n.jpg" alt="ילדים חוגגים יום הולדת במשחקיית GAME OVER"></div>
+            <div class="gal-item reveal reveal-d2"><img src="Images/476142902_17895257520150335_372497690850065485_n.jpg" alt="חדר יום הולדת מעוצב ב-GAME OVER"></div>
+            <div class="gal-item reveal reveal-d3"><img src="Images/480949302_17897234910150335_823365993114622632_n.jpg" alt="מכונות ארקייד ומשחקים ב-GAME OVER"></div>
+            <div class="gal-item reveal reveal-d4"><img src="Images/518313876_122182395986326828_7868823664593536286_n.jpg" alt="אווירת חגיגה במתחם GAME OVER"></div>
         </div>
     </div>
 </section>
@@ -488,19 +511,19 @@
         </div>
         <div class="reviews-grid">
             <div class="review reveal reveal-d1">
-                <div class="review-stars"><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i></div>
+                <div class="review-stars"><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i></div>
                 <div class="review-body">"הארגון היה מושלם! הגענו עם עוגה ולא עשינו כלום. מנהלת האירוע הייתה מדהימה, הילדים לא הפסיקו לצחוק. בהחלט חוגגים שוב!"</div>
-                <div class="review-author"><div class="review-avatar"><i class="ic" data-lucide="user"></i></div><div><div class="review-name">שירה מ.</div><div class="review-detail">יום הולדת 8, עזריאלי גבעתיים</div></div></div>
+                <div class="review-author"><div class="review-avatar"><i class="ic" data-lucide="user" aria-hidden="true"></i></div><div><div class="review-name">שירה מ.</div><div class="review-detail">יום הולדת 8, עזריאלי גבעתיים</div></div></div>
             </div>
             <div class="review reveal reveal-d2">
-                <div class="review-stars"><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i></div>
+                <div class="review-stars"><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i></div>
                 <div class="review-body">"היום הולדת הכי קל שארגנתי בחיים. ב-65 שקל קיבלנו הכל — אוכל, משחקים, חדר מעוצב. והילדים קיבלו כרטיס לביקור חוזר! גאוני."</div>
-                <div class="review-author"><div class="review-avatar"><i class="ic" data-lucide="user"></i></div><div><div class="review-name">יעל כ.</div><div class="review-detail">יום הולדת 7, קניון TLV</div></div></div>
+                <div class="review-author"><div class="review-avatar"><i class="ic" data-lucide="user" aria-hidden="true"></i></div><div><div class="review-name">יעל כ.</div><div class="review-detail">יום הולדת 7, קניון TLV</div></div></div>
             </div>
             <div class="review reveal reveal-d3">
-                <div class="review-stars"><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i></div>
+                <div class="review-stars"><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i></div>
                 <div class="review-body">"ההורים של החברים לא הפסיקו לשאול אותי איפה חגגנו. המקום נקי, מאורגן, ומחיר הוגן. כבר קבענו גם ליום הולדת של הבן הקטן."</div>
-                <div class="review-author"><div class="review-avatar"><i class="ic" data-lucide="user"></i></div><div><div class="review-name">רון א.</div><div class="review-detail">יום הולדת 10, קניון הזהב</div></div></div>
+                <div class="review-author"><div class="review-avatar"><i class="ic" data-lucide="user" aria-hidden="true"></i></div><div><div class="review-name">רון א.</div><div class="review-detail">יום הולדת 10, קניון הזהב</div></div></div>
             </div>
         </div>
     </div>
@@ -508,9 +531,9 @@
 
 <section class="sec bonus">
     <div class="sec-inner">
-        <h2 class="reveal"><i class="ic" data-lucide="gift"></i> בונוס: כרטיס ביקור חוזר</h2>
+        <h2 class="reveal"><i class="ic" data-lucide="gift" aria-hidden="true"></i> בונוס: כרטיס ביקור חוזר</h2>
         <p class="reveal reveal-d1">כל מוזמן ליום ההולדת מקבל כרטיס עם קרדיט חינמי לביקור נוסף ב-GAME OVER!<br>ככה הכיף לא נגמר ביום האירוע.</p>
-        <div class="bonus-tag reveal reveal-d2"><i class="ic" data-lucide="ticket"></i> כרטיס ביקור חוזר חינם לכל מוזמן!</div>
+        <div class="bonus-tag reveal reveal-d2"><i class="ic" data-lucide="ticket" aria-hidden="true"></i> כרטיס ביקור חוזר חינם לכל מוזמן!</div>
     </div>
 </section>
 
@@ -518,17 +541,17 @@
     <div class="sec-inner">
         <h2 class="sec-title reveal">9 סניפים ברחבי הארץ</h2>
         <p class="sec-sub reveal reveal-d1">בחרו את הסניף הקרוב אליכם</p>
-        <div class="locs-grid">
-            <div class="loc reveal reveal-d1"><div class="loc-ic"><i data-lucide="map-pin"></i></div><div class="loc-name">אשדוד</div><div class="loc-mall">קניון אשדוד</div></div>
-            <div class="loc reveal reveal-d1"><div class="loc-ic"><i data-lucide="map-pin"></i></div><div class="loc-name">כרמי גת</div><div class="loc-mall">קניון כרמי גת</div></div>
-            <div class="loc reveal reveal-d2"><div class="loc-ic"><i data-lucide="map-pin"></i></div><div class="loc-name">מבשרת ציון</div><div class="loc-mall">קניון מבשרת ציון</div></div>
-            <div class="loc reveal reveal-d2"><div class="loc-ic"><i data-lucide="map-pin"></i></div><div class="loc-name">גבעתיים</div><div class="loc-mall">עזריאלי גבעתיים</div></div>
-            <div class="loc reveal reveal-d2"><div class="loc-ic"><i data-lucide="map-pin"></i></div><div class="loc-name">תל אביב</div><div class="loc-mall">קניון TLV</div></div>
-            <div class="loc reveal reveal-d3"><div class="loc-ic"><i data-lucide="map-pin"></i></div><div class="loc-name">וייצמן</div><div class="loc-mall">קניון וייצמן</div></div>
-            <div class="loc reveal reveal-d3"><div class="loc-ic"><i data-lucide="map-pin"></i></div><div class="loc-name">וולפסון</div><div class="loc-mall">קניון וולפסון</div></div>
-            <div class="loc reveal reveal-d3"><div class="loc-ic"><i data-lucide="map-pin"></i></div><div class="loc-name">ראשון לציון</div><div class="loc-mall">קניון הזהב</div></div>
-            <div class="loc reveal reveal-d4"><div class="loc-ic"><i data-lucide="map-pin"></i></div><div class="loc-name">סיטי</div><div class="loc-mall">קניון סיטי</div></div>
-        </div>
+        <nav class="locs-grid" aria-label="סניפי GAME OVER">
+            <div class="loc reveal reveal-d1"><div class="loc-ic"><i data-lucide="map-pin" aria-hidden="true"></i></div><div class="loc-name">אשדוד</div><div class="loc-mall">קניון אשדוד</div></div>
+            <div class="loc reveal reveal-d1"><div class="loc-ic"><i data-lucide="map-pin" aria-hidden="true"></i></div><div class="loc-name">כרמי גת</div><div class="loc-mall">קניון כרמי גת</div></div>
+            <div class="loc reveal reveal-d2"><div class="loc-ic"><i data-lucide="map-pin" aria-hidden="true"></i></div><div class="loc-name">מבשרת ציון</div><div class="loc-mall">קניון מבשרת ציון</div></div>
+            <div class="loc reveal reveal-d2"><div class="loc-ic"><i data-lucide="map-pin" aria-hidden="true"></i></div><div class="loc-name">גבעתיים</div><div class="loc-mall">עזריאלי גבעתיים</div></div>
+            <div class="loc reveal reveal-d2"><div class="loc-ic"><i data-lucide="map-pin" aria-hidden="true"></i></div><div class="loc-name">תל אביב</div><div class="loc-mall">קניון TLV</div></div>
+            <div class="loc reveal reveal-d3"><div class="loc-ic"><i data-lucide="map-pin" aria-hidden="true"></i></div><div class="loc-name">וייצמן</div><div class="loc-mall">קניון וייצמן</div></div>
+            <div class="loc reveal reveal-d3"><div class="loc-ic"><i data-lucide="map-pin" aria-hidden="true"></i></div><div class="loc-name">וולפסון</div><div class="loc-mall">קניון וולפסון</div></div>
+            <div class="loc reveal reveal-d3"><div class="loc-ic"><i data-lucide="map-pin" aria-hidden="true"></i></div><div class="loc-name">ראשון לציון</div><div class="loc-mall">קניון הזהב</div></div>
+            <div class="loc reveal reveal-d4"><div class="loc-ic"><i data-lucide="map-pin" aria-hidden="true"></i></div><div class="loc-name">סיטי</div><div class="loc-mall">קניון סיטי</div></div>
+        </nav>
     </div>
 </section>
 
@@ -536,28 +559,30 @@
     <div class="sec-inner">
         <h2 class="reveal">תנו לילד שלכם את יום ההולדת<br>שתמיד חלם עליו!</h2>
         <p class="reveal reveal-d1">65 ₪ לאדם · הכל כלול · אתם רק מביאים עוגה</p>
-        <a href="#top" class="cta-big reveal reveal-d2"><i class="ic" data-lucide="cake"></i> שריינו יום הולדת!</a>
+        <a href="#lead-form" class="cta-big reveal reveal-d2"><i class="ic" data-lucide="cake" aria-hidden="true"></i> שריינו יום הולדת!</a>
     </div>
 </section>
+
+</main>
 
 <footer>GAME OVER · רשת משחקיות · כל הזכויות שמורות © 2026</footer>
 
 <script>
 lucide.createIcons();
-function checkReveals(){const reveals=document.querySelectorAll('.reveal:not(.visible)');const vh=window.innerHeight;reveals.forEach(el=>{const rect=el.getBoundingClientRect();if(rect.top<vh-40){el.classList.add('visible')}});}
+function checkReveals(){var reveals=document.querySelectorAll('.reveal:not(.visible)');var vh=window.innerHeight;reveals.forEach(function(el){var rect=el.getBoundingClientRect();if(rect.top<vh-40){el.classList.add('visible')}});}
 window.addEventListener('scroll',checkReveals,{passive:true});
 window.addEventListener('load',checkReveals);
 checkReveals();
 setTimeout(checkReveals,100);
 setTimeout(checkReveals,500);
 setTimeout(function(){document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){el.classList.add('visible')})},2000);
-function handleSubmit(e){e.preventDefault();const b=e.target.querySelector('.btn-submit'),o=b.innerHTML;b.innerHTML='<span>תודה! נחזור אליכם מיד</span>';b.style.background='linear-gradient(135deg,#34D399,#10B981)';b.disabled=true;setTimeout(()=>{b.innerHTML=o;b.style.background='';b.disabled=false;e.target.reset()},3500)}
+function handleSubmit(e){e.preventDefault();var b=e.target.querySelector('.btn-submit'),o=b.innerHTML;b.innerHTML='<span>תודה! נחזור אליכם מיד</span>';b.style.background='linear-gradient(135deg,#34D399,#10B981)';b.disabled=true;setTimeout(function(){b.innerHTML=o;b.style.background='';b.disabled=false;e.target.reset()},3500)}
 </script>
-<div class="sticky-cta" id="sticky-cta"><a href="#lead-form" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'});return false"><i class="ic" data-lucide="party-popper"></i> שריינו יום הולדת!</a></div>
+<div class="sticky-cta" id="sticky-cta"><a href="#lead-form" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'});return false"><i class="ic" data-lucide="party-popper" aria-hidden="true"></i> שריינו יום הולדת!</a></div>
 <script>
 lucide.createIcons({nameAttr:'data-lucide'});
-(function(){const bar=document.getElementById('sticky-cta'),form=document.getElementById('lead-form');
-function checkSticky(){const rect=form.getBoundingClientRect();bar.classList.toggle('show',rect.bottom<0||rect.top>window.innerHeight);}
+(function(){var bar=document.getElementById('sticky-cta'),form=document.getElementById('lead-form');
+function checkSticky(){var rect=form.getBoundingClientRect();bar.classList.toggle('show',rect.bottom<0||rect.top>window.innerHeight);}
 window.addEventListener('scroll',checkSticky,{passive:true});checkSticky();})();
 </script>
 </body>

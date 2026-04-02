@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GAME OVER - רשת משחקיות ארקייד לכל המשפחה! 9 סניפים בקניונים ברחבי הארץ, עשרות מכונות משחק, פרסים ענקיים וחוויה בלתי נשכחת לילדים ולהורים.">
+    <meta property="og:title" content="GAME OVER | בואו לשחק עם המשפחה">
+    <meta property="og:description" content="רשת משחקיות ארקייד לכל המשפחה. 9 סניפים בקניונים, עשרות מכונות משחק, פרסים ענקיים וחוויה בלתי נשכחת.">
+    <meta property="og:type" content="website">
     <title>GAME OVER | בואו לשחק עם המשפחה</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
@@ -21,6 +25,10 @@
         body{font-family:'Heebo',sans-serif;background:var(--deep);color:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;direction:rtl;text-align:right}
         body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.03;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
+        /* SKIP LINK */
+        .skip-link{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--yellow);color:var(--deep);padding:12px 24px;border-radius:0 0 8px 8px;font-weight:700;z-index:99999;text-decoration:none;font-size:1rem}
+        .skip-link:focus{top:0}
+
         @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
         @keyframes slideUp{from{opacity:0;transform:translateY(45px)}to{opacity:1;transform:translateY(0)}}
         @keyframes scaleIn{from{opacity:0;transform:scale(.88)}to{opacity:1;transform:scale(1)}}
@@ -36,6 +44,9 @@
         .reveal.visible{opacity:1 !important;transform:translateY(0) !important}
         .reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}.reveal-d4{transition-delay:.4s}
         .ic{display:inline-flex;align-items:center;justify-content:center}
+
+        /* FOCUS STYLES */
+        a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
 
         /* TICKER */
         .ticker{background:var(--yellow);color:var(--deep);padding:12px 0;overflow:hidden;white-space:nowrap;font-weight:700;font-size:.9rem;border-bottom:1px solid rgba(0,0,0,.06)}
@@ -80,6 +91,8 @@
         .form-card::before{content:'';position:absolute;top:0;right:0;left:0;height:4px;background:linear-gradient(90deg,var(--yellow),var(--pink),var(--blue),var(--yellow));background-size:200% 100%;animation:shimmer 3s linear infinite}
         .form-heading{font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.55rem;text-align:center;margin-bottom:4px}
         .form-sub{text-align:center;color:#777;font-size:.9rem;margin-bottom:22px}
+        .form-social-proof{text-align:center;font-size:.85rem;color:var(--purple);font-weight:700;margin-bottom:16px;display:flex;align-items:center;justify-content:center;gap:6px}
+        .form-social-proof .ic svg{width:16px;height:16px;color:var(--purple)}
         .field{margin-bottom:14px}
         .field label{display:flex;align-items:center;gap:6px;font-weight:700;font-size:.85rem;margin-bottom:6px;color:var(--deep)}
         .field label .ic svg{width:15px;height:15px;color:var(--purple)}
@@ -183,6 +196,10 @@
         .perks li .ic svg{width:20px;height:20px}
 
         /* TESTIMONIALS */
+        .video-testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px}
+        .video-card{border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.12)}
+        .video-card wistia-player{display:block;width:100%}
+        wistia-player[media-id='fv6amrlo3n']:not(:defined),wistia-player[media-id='0xodg8utqw']:not(:defined),wistia-player[media-id='zr7tkennap']:not(:defined){background:center/contain no-repeat;display:block;filter:blur(5px);padding-top:177.78%}
         .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
         .review{background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border-radius:20px;padding:28px 22px;box-shadow:0 8px 35px rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.04);transition:all .35s;text-align:right;position:relative;z-index:1}
         .review:hover{transform:translateY(-5px);box-shadow:0 14px 45px rgba(0,0,0,.08)}
@@ -217,6 +234,12 @@
         .cta-big:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,0,0,.3)}
         .cta-big .ic svg{width:22px;height:22px}
 
+        /* STICKY CTA */
+        .sticky-cta{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,var(--yellow),#FFB800);padding:14px 20px;text-align:center;z-index:9999;transform:translateY(100%);transition:transform .35s ease;box-shadow:0 -4px 20px rgba(0,0,0,.3)}
+        .sticky-cta.show{transform:translateY(0)}
+        .sticky-cta a{color:var(--deep);font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.2rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+        .sticky-cta a .ic svg{width:20px;height:20px}
+
         footer{background:var(--deep);text-align:center;padding:28px 24px;color:rgba(255,255,255,.2);font-size:.82rem;border-top:1px solid rgba(255,255,255,.05)}
 
         /* TABLET */
@@ -246,6 +269,7 @@
             .locs-grid{grid-template-columns:repeat(3,1fr);gap:10px}
             .final-cta h2{font-size:2rem}
             .cmp-table th,.cmp-table td{padding:12px 10px;font-size:.85rem}
+            .video-testimonials{grid-template-columns:repeat(3,1fr);gap:14px}
         }
         /* MOBILE */
         @media(max-width:600px){
@@ -289,67 +313,62 @@
             .cmp-table{font-size:.8rem;border-radius:14px}
             .cmp-table th{padding:14px 8px;font-size:.85rem}
             .cmp-table td{padding:12px 8px;font-size:.8rem}
+            .video-testimonials{grid-template-columns:1fr;max-width:300px;margin:0 auto 30px}
         }
-        .video-testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px}
-        .video-card{border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.12)}
-        .video-card wistia-player{display:block;width:100%}
-        wistia-player[media-id='fv6amrlo3n']:not(:defined),wistia-player[media-id='0xodg8utqw']:not(:defined),wistia-player[media-id='zr7tkennap']:not(:defined){background:center/contain no-repeat;display:block;filter:blur(5px);padding-top:177.78%}
-        @media(max-width:1024px){.video-testimonials{grid-template-columns:repeat(3,1fr);gap:14px}}
-        @media(max-width:600px){.video-testimonials{grid-template-columns:1fr;max-width:300px;margin:0 auto 30px}}
-        .sticky-cta{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,var(--yellow),#FFB800);padding:14px 20px;text-align:center;z-index:9999;transform:translateY(100%);transition:transform .35s ease;box-shadow:0 -4px 20px rgba(0,0,0,.3)}
-        .sticky-cta.show{transform:translateY(0)}
-        .sticky-cta a{color:var(--deep);font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.2rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
-        .sticky-cta a .ic svg{width:20px;height:20px}
     </style>
 </head>
 <body>
 
-<div class="ticker"><div class="ticker-track">
-    <span class="ticker-item"><i class="ic" data-lucide="map-pin"></i>9 סניפים בקניונים ברחבי הארץ</span>
-    <span class="ticker-item"><i class="ic" data-lucide="credit-card"></i>טעינת כרטיס 100 ₪ = 100 אסימונים + 300 כרטיסי פרסים!</span>
-    <span class="ticker-item"><i class="ic" data-lucide="users"></i>מתאים לגילאי 6-12</span>
-    <span class="ticker-item"><i class="ic" data-lucide="calendar"></i>פתוח כל יום כולל שבת</span>
-    <span class="ticker-item"><i class="ic" data-lucide="map-pin"></i>9 סניפים בקניונים ברחבי הארץ</span>
-    <span class="ticker-item"><i class="ic" data-lucide="credit-card"></i>טעינת כרטיס 100 ₪ = 100 אסימונים + 300 כרטיסי פרסים!</span>
-    <span class="ticker-item"><i class="ic" data-lucide="users"></i>מתאים לגילאי 6-12</span>
-    <span class="ticker-item"><i class="ic" data-lucide="calendar"></i>פתוח כל יום כולל שבת</span>
-    <span class="ticker-item"><i class="ic" data-lucide="map-pin"></i>9 סניפים בקניונים ברחבי הארץ</span>
-    <span class="ticker-item"><i class="ic" data-lucide="credit-card"></i>טעינת כרטיס 100 ₪ = 100 אסימונים + 300 כרטיסי פרסים!</span>
-    <span class="ticker-item"><i class="ic" data-lucide="users"></i>מתאים לגילאי 6-12</span>
-    <span class="ticker-item"><i class="ic" data-lucide="calendar"></i>פתוח כל יום כולל שבת</span>
-    <span class="ticker-item"><i class="ic" data-lucide="map-pin"></i>9 סניפים בקניונים ברחבי הארץ</span>
-    <span class="ticker-item"><i class="ic" data-lucide="credit-card"></i>טעינת כרטיס 100 ₪ = 100 אסימונים + 300 כרטיסי פרסים!</span>
-    <span class="ticker-item"><i class="ic" data-lucide="users"></i>מתאים לגילאי 6-12</span>
-    <span class="ticker-item"><i class="ic" data-lucide="calendar"></i>פתוח כל יום כולל שבת</span>
+<a href="#lead-form" class="skip-link">דלג לטופס</a>
+
+<div class="ticker" role="banner" aria-label="מידע כללי על GAME OVER"><div class="ticker-track">
+    <span class="ticker-item"><i class="ic" data-lucide="map-pin" aria-hidden="true"></i>9 סניפים בקניונים ברחבי הארץ</span>
+    <span class="ticker-item"><i class="ic" data-lucide="credit-card" aria-hidden="true"></i>טעינת כרטיס 100 ₪ = 100 אסימונים + 300 כרטיסי פרסים!</span>
+    <span class="ticker-item"><i class="ic" data-lucide="users" aria-hidden="true"></i>מתאים לגילאי 6-12</span>
+    <span class="ticker-item"><i class="ic" data-lucide="calendar" aria-hidden="true"></i>פתוח כל יום כולל שבת</span>
+    <span class="ticker-item"><i class="ic" data-lucide="map-pin" aria-hidden="true"></i>9 סניפים בקניונים ברחבי הארץ</span>
+    <span class="ticker-item"><i class="ic" data-lucide="credit-card" aria-hidden="true"></i>טעינת כרטיס 100 ₪ = 100 אסימונים + 300 כרטיסי פרסים!</span>
+    <span class="ticker-item"><i class="ic" data-lucide="users" aria-hidden="true"></i>מתאים לגילאי 6-12</span>
+    <span class="ticker-item"><i class="ic" data-lucide="calendar" aria-hidden="true"></i>פתוח כל יום כולל שבת</span>
+    <span class="ticker-item"><i class="ic" data-lucide="map-pin" aria-hidden="true"></i>9 סניפים בקניונים ברחבי הארץ</span>
+    <span class="ticker-item"><i class="ic" data-lucide="credit-card" aria-hidden="true"></i>טעינת כרטיס 100 ₪ = 100 אסימונים + 300 כרטיסי פרסים!</span>
+    <span class="ticker-item"><i class="ic" data-lucide="users" aria-hidden="true"></i>מתאים לגילאי 6-12</span>
+    <span class="ticker-item"><i class="ic" data-lucide="calendar" aria-hidden="true"></i>פתוח כל יום כולל שבת</span>
+    <span class="ticker-item"><i class="ic" data-lucide="map-pin" aria-hidden="true"></i>9 סניפים בקניונים ברחבי הארץ</span>
+    <span class="ticker-item"><i class="ic" data-lucide="credit-card" aria-hidden="true"></i>טעינת כרטיס 100 ₪ = 100 אסימונים + 300 כרטיסי פרסים!</span>
+    <span class="ticker-item"><i class="ic" data-lucide="users" aria-hidden="true"></i>מתאים לגילאי 6-12</span>
+    <span class="ticker-item"><i class="ic" data-lucide="calendar" aria-hidden="true"></i>פתוח כל יום כולל שבת</span>
 </div></div>
 
+<main>
 <section class="hero" id="top">
-    <div class="hero-mesh"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div><div class="grid-overlay"></div></div>
-    <div class="hero-bg-photo"><img src="Images/469077274_122149979228326828_7824498111769936499_n.jpg" alt=""></div>
+    <div class="hero-mesh" aria-hidden="true"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div><div class="grid-overlay"></div></div>
+    <div class="hero-bg-photo" aria-hidden="true"><img src="Images/469077274_122149979228326828_7824498111769936499_n.jpg" alt="משפחה משחקת במשחקיית GAME OVER"></div>
     <div class="hero-wrap">
-        <div class="hero-title">
+        <header class="hero-title">
             <h1>הכיף הכי גדול<br>של <span class="txt-blue">הילדים</span> שלכם?<br><span class="txt-yellow">מתחיל כאן</span></h1>
             <p class="hero-desc">ב-GAME OVER אתם לא יושבים בצד — אתם משחקים ביחד, צוחקים ביחד, ומנצחים ביחד!</p>
-        </div>
+        </header>
         <div class="form-card" id="lead-form">
             <div class="form-heading">בואו לשחק!</div>
             <div class="form-sub">השאירו פרטים ונחזור אליכם תוך דקות</div>
-            <form onsubmit="handleSubmit(event)">
-                <div class="field"><label><i class="ic" data-lucide="user"></i> שם מלא</label><input type="text" id="fname" placeholder="הכניסו את השם שלכם" required></div>
-                <div class="field"><label><i class="ic" data-lucide="phone"></i> טלפון</label><input type="tel" id="phone" placeholder="050-0000000" required></div>
-                <button type="submit" class="btn-submit"><i class="ic" data-lucide="gamepad-2"></i><span>שריינו מקום!</span></button>
+            <div class="form-social-proof"><i class="ic" data-lucide="users" aria-hidden="true"></i> אלפי משפחות כבר ביקרו</div>
+            <form onsubmit="handleSubmit(event)" aria-label="טופס השארת פרטים">
+                <div class="field"><label for="fname"><i class="ic" data-lucide="user" aria-hidden="true"></i> שם מלא</label><input type="text" id="fname" placeholder="הכניסו את השם שלכם" required autofocus></div>
+                <div class="field"><label for="phone"><i class="ic" data-lucide="phone" aria-hidden="true"></i> טלפון</label><input type="tel" id="phone" placeholder="050-0000000" required inputmode="tel" pattern="[0-9\-]{9,13}"></div>
+                <button type="submit" class="btn-submit"><i class="ic" data-lucide="gamepad-2" aria-hidden="true"></i><span>שריינו מקום!</span></button>
             </form>
-            <div class="form-fine"><i class="ic" data-lucide="lock"></i> הפרטים שלכם בטוחים · <b>נחזור תוך 2 דקות</b></div>
+            <div class="form-fine"><i class="ic" data-lucide="lock" aria-hidden="true"></i> הפרטים שלכם בטוחים · <b>נחזור תוך 2 דקות</b></div>
         </div>
         <div class="hero-extras">
             <div class="hero-offer">
-                <div class="offer-ic"><i data-lucide="credit-card"></i></div>
+                <div class="offer-ic"><i data-lucide="credit-card" aria-hidden="true"></i></div>
                 <div class="offer-text"><strong>100 ₪ = 100 אסימונים + 300 כרטיסי פרסים!</strong>שווה בטירוף. הילדים יאהבו.</div>
             </div>
             <div class="hero-pills">
-                <span class="pill"><i class="ic" data-lucide="store"></i> 9 סניפים בקניונים</span>
-                <span class="pill"><i class="ic" data-lucide="trophy"></i> פרסים ענקיים</span>
-                <span class="pill"><i class="ic" data-lucide="users"></i> לכל המשפחה</span>
+                <span class="pill"><i class="ic" data-lucide="store" aria-hidden="true"></i> 9 סניפים בקניונים</span>
+                <span class="pill"><i class="ic" data-lucide="trophy" aria-hidden="true"></i> פרסים ענקיים</span>
+                <span class="pill"><i class="ic" data-lucide="users" aria-hidden="true"></i> לכל המשפחה</span>
             </div>
         </div>
     </div>
@@ -360,9 +379,9 @@
         <h2 class="sec-title reveal">איך זה עובד?</h2>
         <p class="sec-sub reveal reveal-d1">שלושה צעדים פשוטים לחוויה בלתי נשכחת</p>
         <div class="steps-row">
-            <div class="step reveal reveal-d1"><div class="step-circle">1</div><div class="step-ic"><i data-lucide="store"></i></div><h3>מגיעים לסניף הקרוב</h3><p>9 סניפים בקניונים. חניה נוחה, מיזוג, הכל במרחק הליכה</p></div>
-            <div class="step reveal reveal-d2"><div class="step-circle">2</div><div class="step-ic"><i data-lucide="credit-card"></i></div><h3>טוענים כרטיס משחק</h3><p>100 ₪ = 100 אסימונים חינם + 300 כרטיסי פרסים!</p></div>
-            <div class="step reveal reveal-d3"><div class="step-circle">3</div><div class="step-ic"><i data-lucide="trophy"></i></div><h3>משחקים וזוכים!</h3><p>עשרות מכונות ארקייד, אוספים כרטיסים ובוחרים פרסים ענקיים</p></div>
+            <div class="step reveal reveal-d1"><div class="step-circle">1</div><div class="step-ic"><i data-lucide="store" aria-hidden="true"></i></div><h3>מגיעים לסניף הקרוב</h3><p>9 סניפים בקניונים. חניה נוחה, מיזוג, הכל במרחק הליכה</p></div>
+            <div class="step reveal reveal-d2"><div class="step-circle">2</div><div class="step-ic"><i data-lucide="credit-card" aria-hidden="true"></i></div><h3>טוענים כרטיס משחק</h3><p>100 ₪ = 100 אסימונים חינם + 300 כרטיסי פרסים!</p></div>
+            <div class="step reveal reveal-d3"><div class="step-circle">3</div><div class="step-ic"><i data-lucide="trophy" aria-hidden="true"></i></div><h3>משחקים וזוכים!</h3><p>עשרות מכונות ארקייד, אוספים כרטיסים ובוחרים פרסים ענקיים</p></div>
         </div>
     </div>
 </section>
@@ -390,12 +409,12 @@
         <h2 class="sec-title reveal">מה מחכה לכם בפנים?</h2>
         <p class="sec-sub reveal reveal-d1">עשרות מכונות מטורפות שכולם אוהבים — ילדים והורים!</p>
         <div class="acts-grid">
-            <div class="act-card reveal reveal-d1"><div class="act-photo"><img src="Images/476142902_17895257520150335_372497690850065485_n.jpg" alt=""></div><div class="act-body"><h3>משחקי כדורסל</h3><p>תחרות מול ההורים או החברים</p></div></div>
-            <div class="act-card reveal reveal-d2"><div class="act-photo"><img src="Images/470142220_122151826688326828_9187427641355246707_n.jpg" alt=""></div><div class="act-body"><h3>משחקי מיומנות</h3><p>דיוק, מהירות ואסטרטגיה</p></div></div>
-            <div class="act-card reveal reveal-d3"><div class="act-photo"><img src="Images/472555492_17891854050150335_1057401862173796030_n.jpg" alt=""></div><div class="act-body"><h3>מכונות ארקייד</h3><p>המכונות הכי חדשות ומגניבות</p></div></div>
-            <div class="act-card reveal reveal-d1"><div class="act-photo"><img src="Images/476019820_17894812698150335_1571093423486340545_n.jpg" alt=""></div><div class="act-body"><h3>משחקי מירוצים</h3><p>מכוניות, אופנועים ועוד</p></div></div>
-            <div class="act-card reveal reveal-d2"><div class="act-photo"><img src="Images/475813793_122159584526326828_1776076082881919176_n.jpg" alt=""></div><div class="act-body"><h3>מכונות קלואו</h3><p>תפסו בובות ופרסים!</p></div></div>
-            <div class="act-card reveal reveal-d3"><div class="act-photo"><img src="Images/484229977_17899481466150335_4347220971544258212_n.jpg" alt=""></div><div class="act-body"><h3>עוד ועוד משחקים</h3><p>אספו כרטיסים וזכו בפרסים</p></div></div>
+            <div class="act-card reveal reveal-d1"><div class="act-photo"><img src="Images/476142902_17895257520150335_372497690850065485_n.jpg" alt="משחק כדורסל במשחקיית GAME OVER"></div><div class="act-body"><h3>משחקי כדורסל</h3><p>תחרות מול ההורים או החברים</p></div></div>
+            <div class="act-card reveal reveal-d2"><div class="act-photo"><img src="Images/470142220_122151826688326828_9187427641355246707_n.jpg" alt="משחקי מיומנות במשחקיית GAME OVER"></div><div class="act-body"><h3>משחקי מיומנות</h3><p>דיוק, מהירות ואסטרטגיה</p></div></div>
+            <div class="act-card reveal reveal-d3"><div class="act-photo"><img src="Images/472555492_17891854050150335_1057401862173796030_n.jpg" alt="מכונות ארקייד במשחקיית GAME OVER"></div><div class="act-body"><h3>מכונות ארקייד</h3><p>המכונות הכי חדשות ומגניבות</p></div></div>
+            <div class="act-card reveal reveal-d1"><div class="act-photo"><img src="Images/476019820_17894812698150335_1571093423486340545_n.jpg" alt="משחקי מירוצים במשחקיית GAME OVER"></div><div class="act-body"><h3>משחקי מירוצים</h3><p>מכוניות, אופנועים ועוד</p></div></div>
+            <div class="act-card reveal reveal-d2"><div class="act-photo"><img src="Images/475813793_122159584526326828_1776076082881919176_n.jpg" alt="מכונות קלואו במשחקיית GAME OVER"></div><div class="act-body"><h3>מכונות קלואו</h3><p>תפסו בובות ופרסים!</p></div></div>
+            <div class="act-card reveal reveal-d3"><div class="act-photo"><img src="Images/484229977_17899481466150335_4347220971544258212_n.jpg" alt="משחקים נוספים במשחקיית GAME OVER"></div><div class="act-body"><h3>עוד ועוד משחקים</h3><p>אספו כרטיסים וזכו בפרסים</p></div></div>
         </div>
     </div>
 </section>
@@ -413,9 +432,9 @@
                 </div>
             </div>
             <div class="prizes-photos reveal reveal-d2">
-                <div class="prize-ph"><img src="Images/518313876_122182395986326828_7868823664593536286_n.jpg" alt=""></div>
-                <div class="prize-ph"><img src="Images/481849192_17898114888150335_2534829835161257852_n.jpg" alt=""></div>
-                <div class="prize-ph"><img src="Images/590696153_122198500352326828_987566960687754040_n.jpg" alt=""></div>
+                <div class="prize-ph"><img src="Images/518313876_122182395986326828_7868823664593536286_n.jpg" alt="פרסים בדלפק הפרסים של GAME OVER"></div>
+                <div class="prize-ph"><img src="Images/481849192_17898114888150335_2534829835161257852_n.jpg" alt="מבחר פרסים במשחקיית GAME OVER"></div>
+                <div class="prize-ph"><img src="Images/590696153_122198500352326828_987566960687754040_n.jpg" alt="ילדים בוחרים פרסים ב-GAME OVER"></div>
             </div>
         </div>
     </div>
@@ -424,15 +443,15 @@
 <section class="sec sec-dark">
     <div class="sec-inner">
         <div class="parents-grid">
-            <div class="parents-visual reveal"><img src="Images/480144970_122161490888326828_3667681596176756964_n.jpg" alt=""></div>
+            <div class="parents-visual reveal"><img src="Images/480144970_122161490888326828_3667681596176756964_n.jpg" alt="הורים וילדים משחקים יחד ב-GAME OVER"></div>
             <div class="parents-text">
                 <h3 class="reveal">פה ההורים<br><span>לא יושבים בצד</span></h3>
                 <p class="reveal reveal-d1">ב-GAME OVER אין ״תחכו לי על הספסל״. פה אתם חלק מהכיף! תתחרו עם הילדים, תנצחו (או תפסידו), ותיצרו רגעים שלא שוכחים.</p>
                 <ul class="perks reveal reveal-d2">
-                    <li><i class="ic" data-lucide="check"></i> משחקים שמתאימים גם למבוגרים</li>
-                    <li><i class="ic" data-lucide="check"></i> תחרויות משפחתיות מטורפות</li>
-                    <li><i class="ic" data-lucide="check"></i> זמן איכות אמיתי — בלי מסכים</li>
-                    <li><i class="ic" data-lucide="check"></i> בתוך קניון — קפה ואוכל צעד ממכם</li>
+                    <li><i class="ic" data-lucide="check" aria-hidden="true"></i> משחקים שמתאימים גם למבוגרים</li>
+                    <li><i class="ic" data-lucide="check" aria-hidden="true"></i> תחרויות משפחתיות מטורפות</li>
+                    <li><i class="ic" data-lucide="check" aria-hidden="true"></i> זמן איכות אמיתי — בלי מסכים</li>
+                    <li><i class="ic" data-lucide="check" aria-hidden="true"></i> בתוך קניון — קפה ואוכל צעד ממכם</li>
                 </ul>
             </div>
         </div>
@@ -450,19 +469,19 @@
         </div>
         <div class="reviews-grid">
             <div class="review reveal reveal-d1">
-                <div class="review-stars"><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i></div>
+                <div class="review-stars"><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i></div>
                 <div class="review-body">"הילדים לא רצו ללכת הביתה! המקום נקי, מסודר, ויש המון משחקים. גם אני ובעלי נהנינו בטירוף."</div>
-                <div class="review-author"><div class="review-avatar"><i class="ic" data-lucide="user"></i></div><div><div class="review-name">מיכל כ.</div><div class="review-detail">אמא ל-3, עזריאלי גבעתיים</div></div></div>
+                <div class="review-author"><div class="review-avatar"><i class="ic" data-lucide="user" aria-hidden="true"></i></div><div><div class="review-name">מיכל כ.</div><div class="review-detail">אמא ל-3, עזריאלי גבעתיים</div></div></div>
             </div>
             <div class="review reveal reveal-d2">
-                <div class="review-stars"><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i></div>
+                <div class="review-stars"><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i></div>
                 <div class="review-body">"סוף סוף מקום שגם ההורים נהנים! שיחקתי עם הבן שלי שעתיים ולא הרגשתי את הזמן."</div>
-                <div class="review-author"><div class="review-avatar"><i class="ic" data-lucide="user"></i></div><div><div class="review-name">אבי ש.</div><div class="review-detail">אבא ל-2, קניון TLV</div></div></div>
+                <div class="review-author"><div class="review-avatar"><i class="ic" data-lucide="user" aria-hidden="true"></i></div><div><div class="review-name">אבי ש.</div><div class="review-detail">אבא ל-2, קניון TLV</div></div></div>
             </div>
             <div class="review reveal reveal-d3">
-                <div class="review-stars"><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i><i class="ic" data-lucide="star"></i></div>
+                <div class="review-stars"><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i></div>
                 <div class="review-body">"הפתרון המושלם ליום שישי עם הילדים. ממוזג, נקי, נגיש, ובתוך הקניון."</div>
-                <div class="review-author"><div class="review-avatar"><i class="ic" data-lucide="user"></i></div><div><div class="review-name">דנה ל.</div><div class="review-detail">אמא ל-2, קניון הזהב</div></div></div>
+                <div class="review-author"><div class="review-avatar"><i class="ic" data-lucide="user" aria-hidden="true"></i></div><div><div class="review-name">דנה ל.</div><div class="review-detail">אמא ל-2, קניון הזהב</div></div></div>
             </div>
         </div>
     </div>
@@ -472,25 +491,26 @@
     <div class="sec-inner">
         <h2 class="sec-title reveal">9 סניפים ברחבי הארץ</h2>
         <p class="sec-sub reveal reveal-d1">תמיד יש GAME OVER קרוב אליכם</p>
-        <div class="locs-grid">
-            <div class="loc reveal reveal-d1"><div class="loc-ic"><i data-lucide="map-pin"></i></div><div class="loc-name">אשדוד</div><div class="loc-mall">קניון אשדוד</div></div>
-            <div class="loc reveal reveal-d1"><div class="loc-ic"><i data-lucide="map-pin"></i></div><div class="loc-name">כרמי גת</div><div class="loc-mall">קניון כרמי גת</div></div>
-            <div class="loc reveal reveal-d2"><div class="loc-ic"><i data-lucide="map-pin"></i></div><div class="loc-name">מבשרת ציון</div><div class="loc-mall">קניון מבשרת ציון</div></div>
-            <div class="loc reveal reveal-d2"><div class="loc-ic"><i data-lucide="map-pin"></i></div><div class="loc-name">גבעתיים</div><div class="loc-mall">עזריאלי גבעתיים</div></div>
-            <div class="loc reveal reveal-d2"><div class="loc-ic"><i data-lucide="map-pin"></i></div><div class="loc-name">תל אביב</div><div class="loc-mall">קניון TLV</div></div>
-            <div class="loc reveal reveal-d3"><div class="loc-ic"><i data-lucide="map-pin"></i></div><div class="loc-name">וייצמן</div><div class="loc-mall">קניון וייצמן</div></div>
-            <div class="loc reveal reveal-d3"><div class="loc-ic"><i data-lucide="map-pin"></i></div><div class="loc-name">וולפסון</div><div class="loc-mall">קניון וולפסון</div></div>
-            <div class="loc reveal reveal-d3"><div class="loc-ic"><i data-lucide="map-pin"></i></div><div class="loc-name">ראשון לציון</div><div class="loc-mall">קניון הזהב</div></div>
-            <div class="loc reveal reveal-d4"><div class="loc-ic"><i data-lucide="map-pin"></i></div><div class="loc-name">סיטי</div><div class="loc-mall">קניון סיטי</div></div>
-        </div>
+        <nav class="locs-grid" aria-label="רשימת סניפים">
+            <div class="loc reveal reveal-d1"><div class="loc-ic"><i data-lucide="map-pin" aria-hidden="true"></i></div><div class="loc-name">אשדוד</div><div class="loc-mall">קניון אשדוד</div></div>
+            <div class="loc reveal reveal-d1"><div class="loc-ic"><i data-lucide="map-pin" aria-hidden="true"></i></div><div class="loc-name">כרמי גת</div><div class="loc-mall">קניון כרמי גת</div></div>
+            <div class="loc reveal reveal-d2"><div class="loc-ic"><i data-lucide="map-pin" aria-hidden="true"></i></div><div class="loc-name">מבשרת ציון</div><div class="loc-mall">קניון מבשרת ציון</div></div>
+            <div class="loc reveal reveal-d2"><div class="loc-ic"><i data-lucide="map-pin" aria-hidden="true"></i></div><div class="loc-name">גבעתיים</div><div class="loc-mall">עזריאלי גבעתיים</div></div>
+            <div class="loc reveal reveal-d2"><div class="loc-ic"><i data-lucide="map-pin" aria-hidden="true"></i></div><div class="loc-name">תל אביב</div><div class="loc-mall">קניון TLV</div></div>
+            <div class="loc reveal reveal-d3"><div class="loc-ic"><i data-lucide="map-pin" aria-hidden="true"></i></div><div class="loc-name">וייצמן</div><div class="loc-mall">קניון וייצמן</div></div>
+            <div class="loc reveal reveal-d3"><div class="loc-ic"><i data-lucide="map-pin" aria-hidden="true"></i></div><div class="loc-name">וולפסון</div><div class="loc-mall">קניון וולפסון</div></div>
+            <div class="loc reveal reveal-d3"><div class="loc-ic"><i data-lucide="map-pin" aria-hidden="true"></i></div><div class="loc-name">ראשון לציון</div><div class="loc-mall">קניון הזהב</div></div>
+            <div class="loc reveal reveal-d4"><div class="loc-ic"><i data-lucide="map-pin" aria-hidden="true"></i></div><div class="loc-name">סיטי</div><div class="loc-mall">קניון סיטי</div></div>
+        </nav>
     </div>
 </section>
+</main>
 
 <section class="final-cta">
     <div class="sec-inner">
         <h2 class="reveal">הילדים כבר מחכים!</h2>
         <p class="reveal reveal-d1">השאירו פרטים ותקבלו הצעה מיוחדת לביקור הראשון</p>
-        <a href="#top" class="cta-big reveal reveal-d2"><i class="ic" data-lucide="gamepad-2"></i> שריינו מקום!</a>
+        <a href="#lead-form" class="cta-big reveal reveal-d2"><i class="ic" data-lucide="gamepad-2" aria-hidden="true"></i> שריינו מקום!</a>
     </div>
 </section>
 
@@ -498,20 +518,20 @@
 
 <script>
 lucide.createIcons();
-function checkReveals(){const reveals=document.querySelectorAll('.reveal:not(.visible)');const vh=window.innerHeight;reveals.forEach(el=>{const rect=el.getBoundingClientRect();if(rect.top<vh-40){el.classList.add('visible')}});}
+function checkReveals(){var reveals=document.querySelectorAll('.reveal:not(.visible)');var vh=window.innerHeight;reveals.forEach(function(el){var rect=el.getBoundingClientRect();if(rect.top<vh-40){el.classList.add('visible')}});}
 window.addEventListener('scroll',checkReveals,{passive:true});
 window.addEventListener('load',checkReveals);
 checkReveals();
 setTimeout(checkReveals,100);
 setTimeout(checkReveals,500);
 setTimeout(function(){document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){el.classList.add('visible')})},2000);
-function handleSubmit(e){e.preventDefault();const b=e.target.querySelector('.btn-submit'),o=b.innerHTML;b.innerHTML='<span>תודה! נחזור אליכם מיד</span>';b.style.background='linear-gradient(135deg,#34D399,#10B981)';b.style.color='#fff';b.disabled=true;setTimeout(()=>{b.innerHTML=o;b.style.background='';b.style.color='';b.disabled=false;e.target.reset()},3500)}
+function handleSubmit(e){e.preventDefault();var b=e.target.querySelector('.btn-submit'),o=b.innerHTML;b.innerHTML='<span>תודה! נחזור אליכם מיד</span>';b.style.background='linear-gradient(135deg,#34D399,#10B981)';b.style.color='#fff';b.disabled=true;setTimeout(function(){b.innerHTML=o;b.style.background='';b.style.color='';b.disabled=false;e.target.reset()},3500)}
 </script>
-<div class="sticky-cta" id="sticky-cta"><a href="#lead-form" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'});return false"><i class="ic" data-lucide="gamepad-2"></i> בואו לשחק!</a></div>
+<div class="sticky-cta" id="sticky-cta"><a href="#lead-form" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'});return false"><i class="ic" data-lucide="gamepad-2" aria-hidden="true"></i> בואו לשחק!</a></div>
 <script>
 lucide.createIcons({nameAttr:'data-lucide'});
-(function(){const bar=document.getElementById('sticky-cta'),form=document.getElementById('lead-form');
-function checkSticky(){const rect=form.getBoundingClientRect();bar.classList.toggle('show',rect.bottom<0||rect.top>window.innerHeight);}
+(function(){var bar=document.getElementById('sticky-cta'),form=document.getElementById('lead-form');
+function checkSticky(){var rect=form.getBoundingClientRect();bar.classList.toggle('show',rect.bottom<0||rect.top>window.innerHeight);}
 window.addEventListener('scroll',checkSticky,{passive:true});checkSticky();})();
 </script>
 </body>
