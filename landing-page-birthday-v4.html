@@ -118,7 +118,7 @@
         .hero-title h1 .float-cake{display:inline-flex;animation:float 3s ease-in-out infinite;vertical-align:middle;color:var(--pink)}
         .hero-title h1 .float-cake svg{width:44px;height:44px}
         .hero-desc{font-size:1.2rem;line-height:1.75;color:rgba(255,255,255,.9);margin-bottom:24px;max-width:520px;animation:slideUp .9s .12s cubic-bezier(.22,1,.36,1) both}
-        .price-highlight{display:none;align-items:center;gap:16px;background:rgba(255,255,255,.05);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1.5px solid rgba(255,45,120,.4);border-radius:20px;padding:20px 30px;animation:slideUp .9s .25s cubic-bezier(.22,1,.36,1) both,glow 3s ease-in-out infinite;margin-bottom:20px}
+        .price-highlight{display:inline-flex;align-items:center;gap:16px;background:rgba(255,255,255,.05);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1.5px solid rgba(255,45,120,.4);border-radius:20px;padding:20px 30px;animation:slideUp .9s .25s cubic-bezier(.22,1,.36,1) both,glow 3s ease-in-out infinite;margin-bottom:20px}
         .price-num{font-family:'Fredoka',sans-serif;font-weight:700;font-size:3rem;color:var(--yellow);line-height:1;animation:pricePop 3s ease-in-out infinite}
         .price-meta strong{display:block;font-size:1.1rem;color:#fff}
         .price-meta{font-size:.9rem;color:rgba(255,255,255,.65);line-height:1.4}
@@ -312,10 +312,10 @@
             .hero-title{grid-column:1;grid-row:auto;order:2;text-align:right}
             .form-card{grid-column:1;grid-row:auto;order:3}
             .hero-extras{grid-column:1;grid-row:auto;order:1}
-            .hero-extras .price-highlight{display:none}
             .hero-title h1{font-size:3.2rem}
             .hero-desc{text-align:right}
-            .price-highlight{justify-content:center;margin:0 auto 16px}
+            .hero-title .price-highlight{display:none}
+            .hero-title .hero-pills{display:none}
             .sec{padding:60px 20px}
             .sec-title{font-size:2rem}
             .inc-grid{grid-template-columns:repeat(2,1fr)}
@@ -438,6 +438,15 @@
         <div class="hero-title">
             <h1>יום ההולדת הכי שווה<br>לילד שלכם?<br><span class="txt-pink">רק</span> <span class="txt-yellow">79 ₪</span> <span class="txt-pink">לילד</span></h1>
             <p class="hero-desc">תביאו את העוגה — ואנחנו נדאג לכל השאר. הכל כלול: חטיפים, שתייה חופשית, פיצה, חדר פרטי מקושט, משחקים, מנהל אירוע, הזמנה דיגיטלית, ומתנת ביקור חוזר לכל מוזמן!</p>
+            <div class="price-highlight">
+                <div class="price-num">₪79</div>
+                <div class="price-meta"><strong>לילד · הכל כלול</strong>חטיפים, שתייה חופשית ופיצה</div>
+            </div>
+            <div class="hero-pills">
+                <span class="pill"><i class="ic" data-lucide="utensils" aria-hidden="true"></i> אוכל ושתייה כלול</span>
+                <span class="pill"><i class="ic" data-lucide="gamepad-2" aria-hidden="true"></i> כרטיס משחק לכל מוזמן</span>
+                <span class="pill"><i class="ic" data-lucide="clock" aria-hidden="true"></i> שעתיים של כיף</span>
+            </div>
         </div>
         <div class="form-card" id="lead-form">
             <div class="form-urgency"><i class="ic" data-lucide="flame" aria-hidden="true"></i> מקומות מוגבלים</div>
@@ -458,10 +467,6 @@
             </div>
         </div>
         <div class="hero-extras">
-            <div class="price-highlight">
-                <div class="price-num">₪79</div>
-                <div class="price-meta"><strong>לילד · הכל כלול</strong>חטיפים, שתייה חופשית ופיצה</div>
-            </div>
             <div class="hero-scarcity"><span class="scarcity-dot" aria-hidden="true"></span> המבצע מוגבל ל-25 הנרשמים הראשונים בלבד</div>
         </div>
     </div>
