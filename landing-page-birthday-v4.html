@@ -105,12 +105,12 @@
         .thank-you .ty-phone:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(37,211,102,.3)}
         .thank-you .ty-note{font-size:.8rem;color:#999;margin-top:14px}
 
-        .hero-wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.1fr 400px;gap:55px;align-items:center;position:relative;z-index:2;width:100%}
+        .hero-wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.1fr 400px;gap:16px 55px;align-items:center;position:relative;z-index:2;width:100%}
         .hero-title{text-align:right}
         .hero-extras{text-align:right}
-        /* On desktop, title and extras sit in left column, form in right */
-        .hero-title{grid-column:1;grid-row:1}
-        .hero-extras{grid-column:1;grid-row:2}
+        /* On desktop, scarcity above title, form spans full height */
+        .hero-extras{grid-column:1;grid-row:1}
+        .hero-title{grid-column:1;grid-row:2}
         .form-card{grid-column:2;grid-row:1/3}
         .hero-title h1{font-family:'Fredoka',sans-serif;font-weight:700;font-size:3.5rem;line-height:1.15;margin-bottom:18px;animation:slideUp .9s cubic-bezier(.22,1,.36,1) forwards}
         .hero-title h1 .txt-pink{color:var(--pink)}
@@ -118,11 +118,16 @@
         .hero-title h1 .float-cake{display:inline-flex;animation:float 3s ease-in-out infinite;vertical-align:middle;color:var(--pink)}
         .hero-title h1 .float-cake svg{width:44px;height:44px}
         .hero-desc{font-size:1.2rem;line-height:1.75;color:rgba(255,255,255,.9);margin-bottom:24px;max-width:520px;animation:slideUp .9s .12s cubic-bezier(.22,1,.36,1) both}
-        .price-highlight{display:inline-flex;align-items:center;gap:16px;background:rgba(255,255,255,.05);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1.5px solid rgba(255,45,120,.4);border-radius:20px;padding:20px 30px;animation:slideUp .9s .25s cubic-bezier(.22,1,.36,1) both,glow 3s ease-in-out infinite;margin-bottom:20px}
+        .price-highlight{display:none;align-items:center;gap:16px;background:rgba(255,255,255,.05);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1.5px solid rgba(255,45,120,.4);border-radius:20px;padding:20px 30px;animation:slideUp .9s .25s cubic-bezier(.22,1,.36,1) both,glow 3s ease-in-out infinite;margin-bottom:20px}
         .price-num{font-family:'Fredoka',sans-serif;font-weight:700;font-size:3rem;color:var(--yellow);line-height:1;animation:pricePop 3s ease-in-out infinite}
         .price-meta strong{display:block;font-size:1.1rem;color:#fff}
         .price-meta{font-size:.9rem;color:rgba(255,255,255,.65);line-height:1.4}
         .hero-pills{display:flex;gap:10px;flex-wrap:wrap;animation:slideUp .9s .35s cubic-bezier(.22,1,.36,1) both}
+        /* SCARCITY BANNER */
+        @keyframes scarcityPulse{0%,100%{opacity:1}50%{opacity:.4}}
+        .hero-scarcity{display:inline-flex;align-items:center;gap:8px;background:rgba(255,45,120,.08);border:1px solid rgba(255,45,120,.3);border-radius:10px;padding:8px 18px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:.88rem;color:rgba(255,255,255,.9);animation:slideUp .9s cubic-bezier(.22,1,.36,1) both;letter-spacing:.01em}
+        .scarcity-dot{width:9px;height:9px;border-radius:50%;background:var(--coral);flex-shrink:0;animation:scarcityPulse 1.8s ease-in-out infinite;box-shadow:0 0 8px rgba(255,107,107,.6)}
+
         .pill{background:rgba(255,255,255,.05);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);border-radius:50px;padding:10px 20px;font-size:.88rem;transition:all .3s;display:inline-flex;align-items:center;gap:8px}
         .pill:hover{border-color:var(--yellow);background:rgba(255,255,255,.08)}
         .pill .ic svg{width:16px;height:16px;color:var(--yellow)}
@@ -304,13 +309,13 @@
         /* TABLET */
         @media(max-width:1024px){
             .hero-wrap{grid-template-columns:1fr;gap:22px;max-width:100%}
-            .hero-title{grid-column:1;grid-row:auto;order:1;text-align:right}
-            .form-card{grid-column:1;grid-row:auto;order:2}
-            .hero-extras{display:none}
+            .hero-title{grid-column:1;grid-row:auto;order:2;text-align:right}
+            .form-card{grid-column:1;grid-row:auto;order:3}
+            .hero-extras{grid-column:1;grid-row:auto;order:1}
+            .hero-extras .price-highlight{display:none}
             .hero-title h1{font-size:3.2rem}
             .hero-desc{text-align:right}
             .price-highlight{justify-content:center;margin:0 auto 16px}
-            .hero-pills{display:none}
             .sec{padding:60px 20px}
             .sec-title{font-size:2rem}
             .inc-grid{grid-template-columns:repeat(2,1fr)}
@@ -334,8 +339,7 @@
             .hero-desc{font-size:1.05rem}
             .price-highlight{flex-direction:column;text-align:center;padding:16px 20px;gap:10px}
             .price-num{font-size:2.4rem}
-            .hero-pills{flex-direction:column;align-items:center;gap:8px}
-            .pill{font-size:.82rem;padding:8px 16px}
+            .hero-scarcity{font-size:.9rem;padding:12px 16px;border-radius:12px}
             .form-card{padding:24px 20px;border-radius:22px}
             .form-heading{font-size:1.35rem}
             .btn-submit{font-size:1.15rem;padding:15px}
@@ -458,11 +462,7 @@
                 <div class="price-num">₪79</div>
                 <div class="price-meta"><strong>לילד · הכל כלול</strong>חטיפים, שתייה חופשית ופיצה</div>
             </div>
-            <div class="hero-pills">
-                <span class="pill"><i class="ic" data-lucide="utensils" aria-hidden="true"></i> אוכל ושתייה כלול</span>
-                <span class="pill"><i class="ic" data-lucide="gamepad-2" aria-hidden="true"></i> כרטיס משחק לכל מוזמן</span>
-                <span class="pill"><i class="ic" data-lucide="clock" aria-hidden="true"></i> שעתיים של כיף</span>
-            </div>
+            <div class="hero-scarcity"><span class="scarcity-dot" aria-hidden="true"></span> המבצע מוגבל ל-25 הנרשמים הראשונים בלבד</div>
         </div>
     </div>
 </header>
