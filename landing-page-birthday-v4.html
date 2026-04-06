@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ימי הולדת ב-GAME OVER ב-79 שקלים לילד בלבד. הכל כלול — חטיפים ושתייה חופשית ופיצה, משחקים, מנהל אירוע, הזמנה דיגיטלית ומתנת ביקור חוזר. 3 סניפים לימי הולדת.">
+    <meta property="og:title" content="GAME OVER | ימי הולדת ב-79 ₪ לילד — הכל כלול">
+    <meta property="og:description" content="יום הולדת מושלם לילדים ב-79 שקלים בלבד. הכל כלול — חטיפים ושתייה חופשית ופיצה, משחקים ומנהל אירוע. אתם רק מביאים עוגה!">
+    <meta property="og:type" content="website">
+    <title>GAME OVER | ימי הולדת ב-79 ₪</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://fast.wistia.com/player.js" async></script>
+    <script src="https://fast.wistia.com/embed/fv6amrlo3n.js" async type="module"></script>
+    <script src="https://fast.wistia.com/embed/0xodg8utqw.js" async type="module"></script>
+    <script src="https://fast.wistia.com/embed/zr7tkennap.js" async type="module"></script>
+    <style>
+        :root{
+            --pink:#FF2D78;--yellow:#FFD23F;--purple:#8B5CF6;--deep:#0C0118;
+            --blue:#00D4FF;--mint:#34D399;--coral:#FF6B6B;--cream:#FFF9F2;--warm:#FFFCF9;
+        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:'Heebo',sans-serif;background:var(--deep);color:#fff;overflow-x:hidden;max-width:100vw;-webkit-font-smoothing:antialiased;direction:rtl;text-align:right}
+
+        /* SKIP LINK */
+        .skip-link{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--pink);color:#fff;padding:12px 24px;border-radius:0 0 8px 8px;z-index:10000;font-weight:700;text-decoration:none;font-size:1rem;transition:top .2s}
+        .skip-link:focus{top:0}
+
+        /* GRAIN OVERLAY */
+        body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.03;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+        @keyframes slideUp{from{opacity:0;transform:translateY(45px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes scaleIn{from{opacity:0;transform:scale(.88)}to{opacity:1;transform:scale(1)}}
+        @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+        @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-25%)}}
+        @keyframes meshMove{0%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.1)}66%{transform:translate(-20px,15px) scale(.95)}100%{transform:translate(0,0) scale(1)}}
+        @keyframes meshMove2{0%{transform:translate(0,0) scale(1)}33%{transform:translate(-25px,20px) scale(1.05)}66%{transform:translate(15px,-25px) scale(1.1)}100%{transform:translate(0,0) scale(1)}}
+        @keyframes confettiFall{0%{transform:translateY(-10vh) rotate(0deg);opacity:.7}100%{transform:translateY(110vh) rotate(800deg);opacity:0}}
+        @keyframes confettiFall2{0%{transform:translateY(-5vh) rotate(0deg);opacity:.6}100%{transform:translateY(115vh) rotate(-600deg);opacity:0}}
+        @keyframes glow{0%,100%{box-shadow:0 0 20px rgba(255,45,120,.2)}50%{box-shadow:0 0 45px rgba(255,45,120,.45)}}
+        @keyframes pricePop{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+        @keyframes bgShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+        @keyframes wiggle{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+        @keyframes orbFloat{0%{transform:translate(0,0)}50%{transform:translate(40px,-30px)}100%{transform:translate(0,0)}}
+        @keyframes orbFloat2{0%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}100%{transform:translate(0,0)}}
+
+        .reveal{opacity:0;transform:translateY(40px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+        .reveal.visible{opacity:1 !important;transform:translateY(0) !important}
+        .reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}.reveal-d4{transition-delay:.4s}.reveal-d5{transition-delay:.5s}
+        .ic{display:inline-flex;align-items:center;justify-content:center}
+
+        /* MESH GRADIENT BACKGROUND HELPER */
+        .mesh-bg{position:relative;overflow:hidden}
+        .mesh-bg::before,.mesh-bg::after{content:'';position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0}
+
+        /* TICKER */
+        .ticker{background:linear-gradient(90deg,var(--pink),var(--purple),var(--pink));background-size:200% 100%;animation:bgShift 6s ease infinite;padding:13px 0;overflow:hidden;white-space:nowrap;font-weight:700;font-size:.9rem;letter-spacing:.01em;border-bottom:1px solid rgba(255,255,255,.1);direction:ltr}
+        .ticker-track{display:inline-flex;animation:ticker 45s linear infinite;width:max-content}
+        .ticker-item{padding:0 48px;display:inline-flex;align-items:center;gap:10px;direction:rtl}
+        .ticker-item .ic svg{width:15px;height:15px;color:var(--yellow)}
+
+        /* HERO */
+        .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:50px 24px;background:#0C0118}
+        .hero-mesh{position:absolute;inset:0;overflow:hidden;z-index:0}
+        .hero-mesh .orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:.35}
+        .hero-mesh .orb-1{width:500px;height:500px;background:var(--pink);top:-10%;right:-5%;animation:meshMove 12s ease-in-out infinite}
+        .hero-mesh .orb-2{width:400px;height:400px;background:var(--purple);bottom:-5%;left:10%;animation:meshMove2 15s ease-in-out infinite}
+        .hero-mesh .orb-3{width:300px;height:300px;background:var(--blue);top:40%;left:40%;animation:orbFloat 10s ease-in-out infinite;opacity:.15}
+        .hero-mesh .grid-overlay{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px}
+
+        .confetti-piece{position:absolute;opacity:0;pointer-events:none;z-index:1;border-radius:2px}
+        .confetti-piece:nth-child(1){background:var(--yellow);right:8%;top:-3%;width:12px;height:8px;animation:confettiFall 9s 0s linear infinite}
+        .confetti-piece:nth-child(2){background:var(--pink);right:20%;top:-6%;width:8px;height:12px;animation:confettiFall2 11s 1s linear infinite}
+        .confetti-piece:nth-child(3){background:var(--blue);right:35%;top:-2%;width:14px;height:6px;animation:confettiFall 13s 2s linear infinite}
+        .confetti-piece:nth-child(4){background:var(--mint);right:50%;top:-8%;width:6px;height:14px;animation:confettiFall2 8s .5s linear infinite}
+        .confetti-piece:nth-child(5){background:var(--coral);right:65%;top:-4%;width:10px;height:10px;border-radius:50%;animation:confettiFall 12s 1.5s linear infinite}
+        .confetti-piece:nth-child(6){background:var(--purple);right:78%;top:-7%;width:8px;height:8px;animation:confettiFall2 10s 3s linear infinite}
+        .confetti-piece:nth-child(7){background:var(--yellow);right:12%;top:-5%;width:10px;height:6px;animation:confettiFall 14s 0.8s linear infinite}
+        .confetti-piece:nth-child(8){background:var(--pink);right:42%;top:-9%;width:7px;height:13px;animation:confettiFall2 9s 2.5s linear infinite}
+        .confetti-piece:nth-child(9){background:var(--blue);right:58%;top:-3%;width:12px;height:5px;animation:confettiFall 11s 1.2s linear infinite}
+        .confetti-piece:nth-child(10){background:var(--coral);right:88%;top:-6%;width:9px;height:9px;border-radius:50%;animation:confettiFall2 13s 0.3s linear infinite}
+        .confetti-piece:nth-child(11){background:var(--mint);right:25%;top:-8%;width:6px;height:11px;animation:confettiFall 10s 3.5s linear infinite}
+        .confetti-piece:nth-child(12){background:var(--yellow);right:72%;top:-4%;width:11px;height:7px;animation:confettiFall2 12s 1.8s linear infinite}
+
+        /* CONFETTI EXPLOSION ON SUBMIT */
+        @keyframes confettiBurst{0%{transform:translate(0,0) rotate(0deg) scale(1);opacity:1}100%{opacity:0}}
+        .confetti-explosion{position:fixed;inset:0;pointer-events:none;z-index:99999}
+        .confetti-explosion span{position:absolute;display:block;border-radius:2px;animation:confettiBurst 1.5s ease-out forwards}
+
+        /* THANK YOU STATE */
+        .form-card.submitted .form-urgency,
+        .form-card.submitted .form-heading,
+        .form-card.submitted .form-sub,
+        .form-card.submitted form,
+        .form-card.submitted .form-fine{display:none}
+        .thank-you{display:none;text-align:center;padding:30px 10px}
+        .form-card.submitted .thank-you{display:block;animation:scaleIn .5s ease forwards}
+        .thank-you .ty-icon{font-size:3.5rem;margin-bottom:12px;animation:float 2.5s ease-in-out infinite}
+        .thank-you .ty-title{font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.6rem;color:var(--deep);margin-bottom:8px}
+        .thank-you .ty-sub{color:#555;font-size:1rem;line-height:1.6;margin-bottom:20px}
+        .thank-you .ty-phone{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.1rem;padding:14px 28px;border-radius:14px;text-decoration:none;transition:all .3s}
+        .thank-you .ty-phone:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(37,211,102,.3)}
+        .thank-you .ty-note{font-size:.8rem;color:#999;margin-top:14px}
+
+        .hero-wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.1fr 400px;gap:55px;align-items:center;position:relative;z-index:2;width:100%}
+        .hero-title{text-align:right}
+        .hero-extras{text-align:right}
+        /* On desktop, title and extras sit in left column, form in right */
+        .hero-title{grid-column:1;grid-row:1}
+        .hero-extras{grid-column:1;grid-row:2}
+        .form-card{grid-column:2;grid-row:1/3}
+        .hero-title h1{font-family:'Fredoka',sans-serif;font-weight:700;font-size:3.5rem;line-height:1.15;margin-bottom:18px;animation:slideUp .9s cubic-bezier(.22,1,.36,1) forwards}
+        .hero-title h1 .txt-pink{color:var(--pink)}
+        .hero-title h1 .txt-yellow{color:var(--yellow)}
+        .hero-title h1 .float-cake{display:inline-flex;animation:float 3s ease-in-out infinite;vertical-align:middle;color:var(--pink)}
+        .hero-title h1 .float-cake svg{width:44px;height:44px}
+        .hero-desc{font-size:1.2rem;line-height:1.75;color:rgba(255,255,255,.9);margin-bottom:24px;max-width:520px;animation:slideUp .9s .12s cubic-bezier(.22,1,.36,1) both}
+        .price-highlight{display:inline-flex;align-items:center;gap:16px;background:rgba(255,255,255,.05);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1.5px solid rgba(255,45,120,.4);border-radius:20px;padding:20px 30px;animation:slideUp .9s .25s cubic-bezier(.22,1,.36,1) both,glow 3s ease-in-out infinite;margin-bottom:20px}
+        .price-num{font-family:'Fredoka',sans-serif;font-weight:700;font-size:3rem;color:var(--yellow);line-height:1;animation:pricePop 3s ease-in-out infinite}
+        .price-meta strong{display:block;font-size:1.1rem;color:#fff}
+        .price-meta{font-size:.9rem;color:rgba(255,255,255,.65);line-height:1.4}
+        .hero-pills{display:flex;gap:10px;flex-wrap:wrap;animation:slideUp .9s .35s cubic-bezier(.22,1,.36,1) both}
+        .pill{background:rgba(255,255,255,.05);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);border-radius:50px;padding:10px 20px;font-size:.88rem;transition:all .3s;display:inline-flex;align-items:center;gap:8px}
+        .pill:hover{border-color:var(--yellow);background:rgba(255,255,255,.08)}
+        .pill .ic svg{width:16px;height:16px;color:var(--yellow)}
+
+        /* FORM - GLASSMORPHISM */
+        .form-card{background:rgba(255,255,255,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:28px;padding:28px 30px 32px;color:var(--deep);box-shadow:0 30px 80px rgba(0,0,0,.3),0 0 0 1px rgba(255,255,255,.1);animation:scaleIn .85s .15s cubic-bezier(.22,1,.36,1) both;position:relative;overflow:hidden;text-align:right}
+        .form-card::before{content:'';position:absolute;top:0;right:0;left:0;height:4px;background:linear-gradient(90deg,var(--pink),var(--yellow),var(--blue),var(--pink));background-size:200% 100%;animation:shimmer 3s linear infinite}
+        .form-urgency{display:flex;align-items:center;justify-content:center;gap:5px;background:var(--pink);color:#fff;font-weight:700;font-size:.75rem;padding:6px 16px;border-radius:20px;animation:wiggle 2s ease-in-out infinite;width:fit-content;margin:0 auto 14px}
+        .form-urgency .ic svg{width:13px;height:13px}
+        .form-heading{font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.55rem;text-align:center;margin-bottom:4px}
+        .form-sub{text-align:center;color:#777;font-size:.9rem;margin-bottom:22px}
+        .social-proof{text-align:center;font-size:.82rem;color:var(--purple);font-weight:700;margin-bottom:16px;display:flex;align-items:center;justify-content:center;gap:6px}
+        .social-proof .ic svg{width:15px;height:15px;color:var(--purple)}
+        .field{margin-bottom:14px}
+        .field label{display:flex;align-items:center;gap:6px;font-weight:700;font-size:.85rem;margin-bottom:6px;color:var(--deep)}
+        .field label .ic svg{width:15px;height:15px;color:var(--purple)}
+        .field input{width:100%;padding:15px 18px;border:2px solid #EDE5F5;border-radius:14px;font-family:'Heebo',sans-serif;font-size:1rem;transition:all .3s;background:#FAFAFF;direction:rtl;text-align:right}
+        .field input:focus{outline:none;border-color:var(--pink);box-shadow:0 0 0 4px rgba(255,45,120,.08);background:#fff}
+        .field input::placeholder{color:#bbb}
+        .btn-submit{width:100%;padding:17px;background:linear-gradient(135deg,var(--pink),#D91A60);border:none;border-radius:14px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.3rem;color:#fff;cursor:pointer;transition:all .35s cubic-bezier(.22,1,.36,1);margin-top:4px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:8px}
+        .btn-submit::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.12) 50%,transparent 70%);background-size:200% 100%;animation:shimmer 2.5s linear infinite}
+        .btn-submit:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(255,45,120,.35)}
+        .btn-submit:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+        .btn-submit .ic,.btn-submit span{position:relative;z-index:1}
+        .form-fine{text-align:center;font-size:.78rem;color:#999;margin-top:12px;display:flex;align-items:center;justify-content:center;gap:5px}
+        .form-fine b{color:var(--purple)}
+        .form-fine .ic svg{width:13px;height:13px;color:#999}
+
+        /* FOCUS STYLES FOR INTERACTIVE ELEMENTS */
+        a:focus-visible,.pill:focus-visible,.loc:focus-visible,.cta-big:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+
+        /* SECTIONS */
+        .sec{padding:90px 24px;position:relative}
+        .sec-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+        .sec-title{font-family:'Fredoka',sans-serif;font-weight:700;font-size:2.6rem;text-align:center;margin-bottom:14px;line-height:1.2}
+        .sec-sub{text-align:center;font-size:1.1rem;margin-bottom:50px;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.6}
+
+        /* DARK SECTION BG */
+        .sec-dark{background:var(--deep);overflow:hidden}
+        .sec-dark::before{content:'';position:absolute;width:400px;height:400px;border-radius:50%;filter:blur(120px);opacity:.12;background:var(--purple);top:-100px;right:-100px;animation:orbFloat 14s ease-in-out infinite}
+        .sec-dark::after{content:'';position:absolute;width:350px;height:350px;border-radius:50%;filter:blur(120px);opacity:.08;background:var(--pink);bottom:-80px;left:-80px;animation:orbFloat2 16s ease-in-out infinite}
+        .sec-dark .sec-sub{color:rgba(255,255,255,.5)}
+
+        /* LIGHT SECTION BG */
+        .sec-light{background:var(--cream);color:var(--deep);overflow:hidden;max-width:100vw}
+        .sec-light::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;filter:blur(150px);opacity:.15;background:rgba(255,45,120,.2);top:-150px;left:-100px}
+        .sec-light::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;filter:blur(150px);opacity:.1;background:rgba(139,92,246,.15);bottom:-100px;right:-100px}
+        .sec-light .sec-title{color:var(--deep)}
+        .sec-light .sec-sub{color:#7A6A8A}
+
+        /* INCLUDED */
+        .inc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+        .inc-card{background:rgba(255,255,255,.04);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:28px 18px 24px;text-align:center;transition:all .4s cubic-bezier(.22,1,.36,1)}
+        .inc-card:hover{transform:translateY(-6px);border-color:rgba(255,210,63,.3);background:rgba(255,255,255,.07)}
+        .inc-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+        .inc-card:nth-child(1) .inc-icon{background:rgba(255,45,120,.12);color:var(--pink)}
+        .inc-card:nth-child(2) .inc-icon{background:rgba(255,210,63,.12);color:var(--yellow)}
+        .inc-card:nth-child(3) .inc-icon{background:rgba(0,212,255,.12);color:var(--blue)}
+        .inc-card:nth-child(4) .inc-icon{background:rgba(139,92,246,.12);color:var(--purple)}
+        .inc-card:nth-child(5) .inc-icon{background:rgba(255,107,107,.12);color:var(--coral)}
+        .inc-card:nth-child(6) .inc-icon{background:rgba(52,211,153,.12);color:var(--mint)}
+        .inc-card:nth-child(7) .inc-icon{background:rgba(0,212,255,.12);color:var(--blue)}
+        .inc-card:nth-child(8) .inc-icon{background:rgba(255,210,63,.12);color:var(--yellow)}
+        .inc-icon svg{width:26px;height:26px}
+        .inc-card h3{font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.1rem;margin-bottom:6px;color:var(--yellow)}
+        .inc-card p{color:rgba(255,255,255,.7);font-size:.9rem;line-height:1.5}
+
+        /* CAKE */
+        .vs-section{text-align:center;position:relative;z-index:1}
+        .vs-section h3{font-family:'Fredoka',sans-serif;font-weight:700;font-size:2.8rem;line-height:1.25;margin-bottom:20px;color:var(--deep)}
+        .vs-section h3 em{color:var(--pink);font-style:normal}
+        .vs-section>p{font-size:1.15rem;line-height:1.8;color:#5A4A6A;margin-bottom:45px;max-width:600px;margin-left:auto;margin-right:auto}
+        .vs-boxes{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:900px;margin:0 auto}
+        .vs-box{border-radius:20px;padding:32px 28px;text-align:right}
+        .vs-box-good{background:rgba(52,211,153,.06);border:2px solid var(--mint)}
+        .vs-box-bad{background:rgba(255,45,120,.04);border:2px solid rgba(255,45,120,.35)}
+        .vs-box h4{font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.8rem;margin-bottom:26px;color:var(--deep)}
+        .vs-box-good h4{color:var(--mint)}
+        .vs-box-bad h4{color:var(--pink)}
+        .vs-item{display:flex;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:1.3rem;font-weight:600;color:var(--deep);line-height:1.5}
+        .vs-item:last-child{border-bottom:none}
+        .vs-icon{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.15rem;font-weight:700}
+        .vs-box-good .vs-icon{background:var(--mint);color:#fff}
+        .vs-box-bad .vs-icon{background:var(--pink);color:#fff}
+
+        /* COMPARISON */
+        .cmp-table{width:100%;border-collapse:separate;border-spacing:0;border-radius:20px;overflow:hidden;box-shadow:0 12px 50px rgba(0,0,0,.06);position:relative;z-index:1}
+        .cmp-table th{padding:20px 24px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.1rem;text-align:center}
+        .cmp-table th:first-child{background:transparent;width:34%;text-align:right}
+        .cmp-table th.us{background:linear-gradient(135deg,var(--pink),#D01A5A);color:#fff;width:33%}
+        .cmp-table th.them{background:#EDE8F0;color:#999;width:33%}
+        .cmp-table td{padding:16px 24px;text-align:center;font-size:.95rem;border-bottom:1px solid #F5F0F8}
+        .cmp-table td:first-child{text-align:right;font-weight:600;background:#FFFCFF}
+        .cmp-table td:nth-child(2){background:rgba(255,45,120,.02);font-weight:600}
+        .cmp-table td:nth-child(3){background:#FAFAFA;color:#aaa}
+        .cmp-table tr:last-child td{border-bottom:none}
+        .yes{color:var(--mint);font-weight:800;font-size:1.2rem}
+        .no{color:#ddd;font-size:1.2rem}
+
+        /* STEPS */
+        .steps-row{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+        .step{text-align:center}
+        .step-circle{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.4rem;margin:0 auto 16px;transition:transform .3s;box-shadow:0 8px 25px rgba(0,0,0,.15)}
+        .step:hover .step-circle{transform:scale(1.1)}
+        .step:nth-child(1) .step-circle{background:linear-gradient(135deg,var(--pink),var(--coral))}
+        .step:nth-child(2) .step-circle{background:linear-gradient(135deg,var(--yellow),#FFA726);color:var(--deep)}
+        .step:nth-child(3) .step-circle{background:linear-gradient(135deg,var(--blue),var(--mint));color:var(--deep)}
+        .step:nth-child(4) .step-circle{background:linear-gradient(135deg,var(--purple),var(--pink))}
+        .step-ic{width:44px;height:44px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6)}
+        .step-ic svg{width:28px;height:28px}
+        .step h3{font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.02rem;margin-bottom:5px}
+        .step p{color:rgba(255,255,255,.45);font-size:.85rem;line-height:1.5}
+
+        /* GALLERY */
+        .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+        .gal-item{aspect-ratio:1;border-radius:18px;overflow:hidden;position:relative;cursor:default}
+        .gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+        .gal-item:hover img{transform:scale(1.08)}
+
+        /* TESTIMONIALS */
+        .video-testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px}
+        .video-card{border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.12)}
+        .video-card wistia-player{display:block;width:100%}
+        wistia-player[media-id='fv6amrlo3n']:not(:defined),wistia-player[media-id='0xodg8utqw']:not(:defined),wistia-player[media-id='zr7tkennap']:not(:defined){background:center/contain no-repeat;display:block;filter:blur(5px);padding-top:177.78%}
+        .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+        .review{background:rgba(255,255,255,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:20px;padding:30px 24px;box-shadow:0 8px 35px rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.04);transition:all .35s;text-align:right;position:relative;z-index:1}
+        .review:hover{transform:translateY(-5px);box-shadow:0 14px 45px rgba(0,0,0,.08)}
+        .review-stars{display:flex;gap:2px;margin-bottom:14px;color:var(--yellow)}
+        .review-stars .ic svg{width:17px;height:17px;fill:var(--yellow)}
+        .review-body{font-size:.95rem;line-height:1.75;color:#555;margin-bottom:18px;font-style:italic}
+        .review-author{display:flex;align-items:center;gap:12px}
+        .review-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff}
+        .review:nth-child(1) .review-avatar{background:linear-gradient(135deg,var(--pink),var(--purple))}
+        .review:nth-child(2) .review-avatar{background:linear-gradient(135deg,var(--yellow),var(--coral))}
+        .review:nth-child(3) .review-avatar{background:linear-gradient(135deg,var(--blue),var(--mint))}
+        .review-avatar .ic svg{width:18px;height:18px}
+        .review-name{font-weight:700;font-size:.9rem;color:var(--deep)}
+        .review-detail{font-size:.75rem;color:#aaa}
+
+        /* BONUS */
+        .bonus{background:linear-gradient(135deg,var(--pink),#B01550);text-align:center;position:relative;overflow:hidden}
+        .bonus::before{content:'';position:absolute;width:350px;height:350px;border-radius:50%;filter:blur(100px);opacity:.2;background:var(--yellow);top:-100px;right:-50px}
+        .bonus .sec-inner{position:relative;z-index:1}
+        .bonus h2{font-family:'Fredoka',sans-serif;font-weight:700;font-size:2.2rem;margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:12px}
+        .bonus h2 .ic svg{width:32px;height:32px}
+        .bonus p{font-size:1.05rem;line-height:1.7;max-width:600px;margin:0 auto 28px;color:rgba(255,255,255,.88)}
+        .bonus-tag{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1.5px solid rgba(255,255,255,.2);border-radius:16px;padding:16px 32px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.15rem}
+        .bonus-tag .ic svg{width:20px;height:20px}
+
+        /* LOCATIONS */
+        .locs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+        .loc{background:rgba(255,255,255,.04);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:20px;text-align:center;transition:all .3s}
+        .loc:hover{border-color:var(--pink);transform:translateY(-3px);background:rgba(255,45,120,.05)}
+        .loc-ic{margin-bottom:6px;color:var(--pink)}
+        .loc-ic svg{width:20px;height:20px}
+        .loc-name{font-family:'Fredoka',sans-serif;font-weight:600;font-size:1rem}
+        .loc-mall{font-size:.75rem;color:rgba(255,255,255,.4);margin-top:2px}
+
+        /* FINAL CTA */
+        .final-cta{background:linear-gradient(135deg,var(--yellow),#F0B800);color:var(--deep);text-align:center;padding:80px 24px;position:relative;overflow:hidden}
+        .final-cta::before{content:'';position:absolute;width:400px;height:400px;border-radius:50%;filter:blur(120px);opacity:.15;background:var(--pink);bottom:-100px;left:-50px}
+        .final-cta .sec-inner{position:relative;z-index:1}
+        .final-cta h2{font-family:'Fredoka',sans-serif;font-weight:700;font-size:2.7rem;margin-bottom:12px;line-height:1.2}
+        .final-cta p{font-size:1.1rem;color:rgba(12,1,24,.5);margin-bottom:32px}
+        .cta-big{display:inline-flex;align-items:center;gap:10px;padding:18px 48px;background:var(--pink);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.3rem;border-radius:60px;text-decoration:none;transition:all .35s;border:none;cursor:pointer;box-shadow:0 8px 30px rgba(255,45,120,.3)}
+        .cta-big:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(255,45,120,.4)}
+        .cta-big:focus-visible{outline:3px solid var(--deep);outline-offset:2px}
+        .cta-big .ic svg{width:22px;height:22px}
+
+        footer{background:var(--deep);text-align:center;padding:28px 24px;color:rgba(255,255,255,.2);font-size:.82rem;border-top:1px solid rgba(255,255,255,.05)}
+
+        /* STICKY CTA */
+        .sticky-cta{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,var(--pink),var(--purple));padding:14px 20px;text-align:center;z-index:9999;transform:translateY(100%);transition:transform .35s ease;box-shadow:0 -4px 20px rgba(0,0,0,.3)}
+        .sticky-cta.show{transform:translateY(0)}
+        .sticky-cta a{color:#fff;font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.2rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+        .sticky-cta a .ic svg{width:20px;height:20px}
+        .sticky-cta a:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+
+        /* TABLET */
+        @media(max-width:1024px){
+            .hero-wrap{grid-template-columns:1fr;gap:22px;max-width:100%}
+            .hero-title{grid-column:1;grid-row:auto;order:1;text-align:right}
+            .form-card{grid-column:1;grid-row:auto;order:2}
+            .hero-extras{display:none}
+            .hero-title h1{font-size:3.2rem}
+            .hero-desc{text-align:right}
+            .price-highlight{justify-content:center;margin:0 auto 16px}
+            .hero-pills{display:none}
+            .sec{padding:60px 20px}
+            .sec-title{font-size:2rem}
+            .inc-grid{grid-template-columns:repeat(2,1fr)}
+            .vs-section h3{font-size:2.2rem}
+            .vs-boxes{grid-template-columns:1fr 1fr;gap:18px}
+            .steps-row{grid-template-columns:1fr 1fr;gap:14px}
+            .gal-grid{grid-template-columns:1fr 1fr;gap:10px}
+            .reviews-grid{grid-template-columns:1fr;gap:14px}
+            .locs-grid{grid-template-columns:repeat(3,1fr);gap:10px}
+            .final-cta h2{font-size:2rem}
+            .cmp-table th,.cmp-table td{padding:12px 10px;font-size:.85rem}
+            .prizes-grid{grid-template-columns:1fr}
+            .parents-grid{grid-template-columns:1fr}
+            .video-testimonials{grid-template-columns:repeat(3,1fr);gap:14px}
+        }
+        /* MOBILE */
+        @media(max-width:600px){
+            .hero{padding:24px 12px}
+            .hero-title h1{font-size:2.5rem;line-height:1.15}
+            .hero-title h1 .float-cake svg{width:32px;height:32px}
+            .hero-desc{font-size:1.05rem}
+            .price-highlight{flex-direction:column;text-align:center;padding:16px 20px;gap:10px}
+            .price-num{font-size:2.4rem}
+            .hero-pills{flex-direction:column;align-items:center;gap:8px}
+            .pill{font-size:.82rem;padding:8px 16px}
+            .form-card{padding:24px 20px;border-radius:22px}
+            .form-heading{font-size:1.35rem}
+            .btn-submit{font-size:1.15rem;padding:15px}
+            .sec{padding:50px 16px}
+            .sec-title{font-size:1.7rem}
+            .sec-sub{font-size:.95rem;margin-bottom:35px}
+            .inc-grid{grid-template-columns:1fr 1fr;gap:10px}
+            .inc-card{padding:20px 14px 18px;border-radius:16px}
+            .inc-icon{width:44px;height:44px;border-radius:12px}
+            .inc-icon svg{width:22px;height:22px}
+            .inc-card h3{font-size:.95rem}
+            .inc-card p{font-size:.82rem}
+            .vs-section h3{font-size:1.8rem}
+            .vs-section>p{font-size:1rem}
+            .vs-boxes{grid-template-columns:1fr;gap:20px}
+            .vs-box{padding:24px 20px}
+            .vs-box h4{font-size:1.2rem}
+            .vs-item{font-size:.95rem;gap:10px}
+            .vs-icon{width:28px;height:28px;font-size:.85rem}
+            .steps-row{grid-template-columns:1fr 1fr;gap:12px}
+            .step{padding:22px 14px 18px}
+            .step-circle{width:50px;height:50px;font-size:1.2rem}
+            .gal-grid{grid-template-columns:1fr 1fr;gap:8px}
+            .gal-item{border-radius:12px}
+            .review{padding:22px 18px}
+            .review-body{font-size:.88rem}
+            .locs-grid{grid-template-columns:1fr 1fr;gap:8px}
+            .loc{padding:16px 12px;border-radius:12px}
+            .loc-name{font-size:.9rem}
+            .bonus-inner{padding:35px 20px;border-radius:20px}
+            .bonus-inner h2{font-size:1.6rem}
+            .bonus-inner p{font-size:.92rem}
+            .bonus-tag{font-size:.95rem;padding:12px 20px}
+            .final-cta{padding:50px 16px}
+            .final-cta h2{font-size:1.7rem}
+            .final-cta p{font-size:.95rem}
+            .cta-big{padding:16px 36px;font-size:1.15rem}
+            .cmp-table{font-size:.8rem;border-radius:14px}
+            .cmp-table th{padding:14px 8px;font-size:.85rem}
+            .cmp-table td{padding:12px 8px;font-size:.8rem}
+            .video-testimonials{grid-template-columns:1fr;max-width:300px;margin:0 auto 30px}
+        }
+    </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">דלג לתוכן הראשי</a>
+
+<div class="ticker" role="banner" aria-label="מבצעים והטבות"><div class="ticker-track">
+    <span class="ticker-item"><i class="ic" data-lucide="cake" aria-hidden="true"></i>ימי הולדת ב-79 ₪ לילד — הכל כלול</span>
+    <span class="ticker-item"><i class="ic" data-lucide="sparkles" aria-hidden="true"></i>כל ההכנות עלינו — אתם רק מביאים עוגה</span>
+    <span class="ticker-item"><i class="ic" data-lucide="map-pin" aria-hidden="true"></i>3 סניפים לימי הולדת ברחבי הארץ</span>
+    <span class="ticker-item"><i class="ic" data-lucide="ticket" aria-hidden="true"></i>כרטיס ביקור חוזר חינם לכל מוזמן</span>
+    <span class="ticker-item"><i class="ic" data-lucide="utensils" aria-hidden="true"></i>חטיפים ושתייה חופשית ופיצה</span>
+    <span class="ticker-item"><i class="ic" data-lucide="party-popper" aria-hidden="true"></i>חדר מקושט בבלונים ועיצובים</span>
+    <span class="ticker-item"><i class="ic" data-lucide="mail" aria-hidden="true"></i>הזמנה דיגיטלית לשלוח להורים</span>
+    <span class="ticker-item"><i class="ic" data-lucide="headset" aria-hidden="true"></i>מנהל אירוע מסור מלווה אתכם</span>
+    <span class="ticker-item"><i class="ic" data-lucide="cake" aria-hidden="true"></i>ימי הולדת ב-79 ₪ לילד — הכל כלול</span>
+    <span class="ticker-item"><i class="ic" data-lucide="sparkles" aria-hidden="true"></i>כל ההכנות עלינו — אתם רק מביאים עוגה</span>
+    <span class="ticker-item"><i class="ic" data-lucide="map-pin" aria-hidden="true"></i>3 סניפים לימי הולדת ברחבי הארץ</span>
+    <span class="ticker-item"><i class="ic" data-lucide="ticket" aria-hidden="true"></i>כרטיס ביקור חוזר חינם לכל מוזמן</span>
+    <span class="ticker-item"><i class="ic" data-lucide="utensils" aria-hidden="true"></i>חטיפים ושתייה חופשית ופיצה</span>
+    <span class="ticker-item"><i class="ic" data-lucide="party-popper" aria-hidden="true"></i>חדר מקושט בבלונים ועיצובים</span>
+    <span class="ticker-item"><i class="ic" data-lucide="mail" aria-hidden="true"></i>הזמנה דיגיטלית לשלוח להורים</span>
+    <span class="ticker-item"><i class="ic" data-lucide="headset" aria-hidden="true"></i>מנהל אירוע מסור מלווה אתכם</span>
+    <span class="ticker-item"><i class="ic" data-lucide="cake" aria-hidden="true"></i>ימי הולדת ב-79 ₪ לילד — הכל כלול</span>
+    <span class="ticker-item"><i class="ic" data-lucide="sparkles" aria-hidden="true"></i>כל ההכנות עלינו — אתם רק מביאים עוגה</span>
+    <span class="ticker-item"><i class="ic" data-lucide="map-pin" aria-hidden="true"></i>3 סניפים לימי הולדת ברחבי הארץ</span>
+    <span class="ticker-item"><i class="ic" data-lucide="ticket" aria-hidden="true"></i>כרטיס ביקור חוזר חינם לכל מוזמן</span>
+    <span class="ticker-item"><i class="ic" data-lucide="utensils" aria-hidden="true"></i>חטיפים ושתייה חופשית ופיצה</span>
+    <span class="ticker-item"><i class="ic" data-lucide="party-popper" aria-hidden="true"></i>חדר מקושט בבלונים ועיצובים</span>
+    <span class="ticker-item"><i class="ic" data-lucide="mail" aria-hidden="true"></i>הזמנה דיגיטלית לשלוח להורים</span>
+    <span class="ticker-item"><i class="ic" data-lucide="headset" aria-hidden="true"></i>מנהל אירוע מסור מלווה אתכם</span>
+    <span class="ticker-item"><i class="ic" data-lucide="cake" aria-hidden="true"></i>ימי הולדת ב-79 ₪ לילד — הכל כלול</span>
+    <span class="ticker-item"><i class="ic" data-lucide="sparkles" aria-hidden="true"></i>כל ההכנות עלינו — אתם רק מביאים עוגה</span>
+    <span class="ticker-item"><i class="ic" data-lucide="map-pin" aria-hidden="true"></i>3 סניפים לימי הולדת ברחבי הארץ</span>
+    <span class="ticker-item"><i class="ic" data-lucide="ticket" aria-hidden="true"></i>כרטיס ביקור חוזר חינם לכל מוזמן</span>
+    <span class="ticker-item"><i class="ic" data-lucide="utensils" aria-hidden="true"></i>חטיפים ושתייה חופשית ופיצה</span>
+    <span class="ticker-item"><i class="ic" data-lucide="party-popper" aria-hidden="true"></i>חדר מקושט בבלונים ועיצובים</span>
+    <span class="ticker-item"><i class="ic" data-lucide="mail" aria-hidden="true"></i>הזמנה דיגיטלית לשלוח להורים</span>
+    <span class="ticker-item"><i class="ic" data-lucide="headset" aria-hidden="true"></i>מנהל אירוע מסור מלווה אתכם</span>
+</div></div>
+
+<main id="main-content">
+
+<header class="hero" id="top">
+    <div class="hero-mesh" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+    <div class="confetti-piece" aria-hidden="true"></div><div class="confetti-piece" aria-hidden="true"></div><div class="confetti-piece" aria-hidden="true"></div><div class="confetti-piece" aria-hidden="true"></div><div class="confetti-piece" aria-hidden="true"></div><div class="confetti-piece" aria-hidden="true"></div><div class="confetti-piece" aria-hidden="true"></div><div class="confetti-piece" aria-hidden="true"></div><div class="confetti-piece" aria-hidden="true"></div><div class="confetti-piece" aria-hidden="true"></div><div class="confetti-piece" aria-hidden="true"></div><div class="confetti-piece" aria-hidden="true"></div>
+
+    <div class="hero-wrap">
+        <div class="hero-title">
+            <h1>יום ההולדת הכי שווה<br>לילד שלכם?<br><span class="txt-pink">רק</span> <span class="txt-yellow">79 ₪</span> <span class="txt-pink">לילד</span></h1>
+            <p class="hero-desc">תביאו את העוגה — ואנחנו נדאג לכל השאר. הכל כלול: חטיפים, שתייה חופשית, פיצה, חדר פרטי מקושט, משחקים, מנהל אירוע, הזמנה דיגיטלית, ומתנת ביקור חוזר לכל מוזמן!</p>
+        </div>
+        <div class="form-card" id="lead-form">
+            <div class="form-urgency"><i class="ic" data-lucide="flame" aria-hidden="true"></i> מקומות מוגבלים</div>
+            <div class="form-heading">שריינו יום הולדת!</div>
+            <div class="form-sub">השאירו פרטים ונציגנו יחזרו אליכם בהקדם</div>
+            <form onsubmit="handleSubmit(event)" aria-label="טופס הרשמה ליום הולדת">
+                <div class="field"><label for="fname"><i class="ic" data-lucide="user" aria-hidden="true"></i> שם מלא</label><input type="text" id="fname" placeholder="הכניסו את השם שלכם" required autofocus></div>
+                <div class="field"><label for="phone"><i class="ic" data-lucide="phone" aria-hidden="true"></i> טלפון</label><input type="tel" id="phone" placeholder="050-0000000" required inputmode="tel" pattern="[\d\-+]{9,15}"></div>
+                <button type="submit" class="btn-submit"><i class="ic" data-lucide="party-popper" aria-hidden="true"></i><span>שריינו מקום!</span></button>
+            </form>
+            <div class="form-fine">*המבצע תקף לימי הולדת מעל 15 ילדים</div>
+            <div class="thank-you">
+                <div class="ty-icon">🎉</div>
+                <div class="ty-title">קיבלנו את הפרטים!</div>
+                <div class="ty-sub">נציג שלנו יחזור אליכם בהקדם כדי לסגור את כל הפרטים ליום ההולדת המושלם 🎂</div>
+                <a href="https://wa.me/972555567906" target="_blank" rel="noopener" class="ty-phone"><i class="ic" data-lucide="message-circle" aria-hidden="true"></i> דברו איתנו ב-WhatsApp</a>
+                <div class="ty-note">לא רוצים לחכות? שלחו לנו הודעה עכשיו</div>
+            </div>
+        </div>
+        <div class="hero-extras">
+            <div class="price-highlight">
+                <div class="price-num">₪79</div>
+                <div class="price-meta"><strong>לילד · הכל כלול</strong>חטיפים, שתייה חופשית ופיצה</div>
+            </div>
+            <div class="hero-pills">
+                <span class="pill"><i class="ic" data-lucide="utensils" aria-hidden="true"></i> אוכל ושתייה כלול</span>
+                <span class="pill"><i class="ic" data-lucide="gamepad-2" aria-hidden="true"></i> כרטיס משחק לכל מוזמן</span>
+                <span class="pill"><i class="ic" data-lucide="clock" aria-hidden="true"></i> שעתיים של כיף</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="sec sec-dark">
+    <div class="sec-inner">
+        <h2 class="sec-title reveal">מה כלול ב-79 ₪ לילד?</h2>
+        <p class="sec-sub reveal reveal-d1">הכל. פשוט הכל. אתם רק מביאים עוגה.</p>
+        <div class="inc-grid">
+            <div class="inc-card reveal reveal-d1"><div class="inc-icon"><i data-lucide="door-open" aria-hidden="true"></i></div><h3>חדר פרטי</h3><p>חדר יום הולדת מעוצב ומוכן רק בשבילכם</p></div>
+            <div class="inc-card reveal reveal-d2"><div class="inc-icon"><i data-lucide="utensils" aria-hidden="true"></i></div><h3>אוכל ושתייה</h3><p>הכל כלול — חטיפים ושתייה חופשית ופיצה לכל מוזמן</p></div>
+            <div class="inc-card reveal reveal-d2"><div class="inc-icon"><i data-lucide="gamepad-2" aria-hidden="true"></i></div><h3>כרטיס משחק</h3><p>כרטיס טעון עם קרדיט לכל מוזמן</p></div>
+            <div class="inc-card reveal reveal-d3"><div class="inc-icon"><i data-lucide="headset" aria-hidden="true"></i></div><h3>מנהל/ת אירוע</h3><p>דואג/ת להכל מההתחלה עד הסוף</p></div>
+            <div class="inc-card reveal reveal-d3"><div class="inc-icon"><i data-lucide="party-popper" aria-hidden="true"></i></div><h3>עיצוב וקישוטים</h3><p>החדר והסניף מקושטים בבלונים ועיצובים ביום האירוע</p></div>
+            <div class="inc-card reveal reveal-d4"><div class="inc-icon"><i data-lucide="ticket" aria-hidden="true"></i></div><h3>מתנת ביקור חוזר</h3><p>כל מוזמן מקבל קרדיט חינם לביקור נוסף!</p></div>
+            <div class="inc-card reveal reveal-d4"><div class="inc-icon"><i data-lucide="timer" aria-hidden="true"></i></div><h3>שעתיים של כיף</h3><p>משחקים, אוכל ובילוי ללא הפסקה</p></div>
+            <div class="inc-card reveal reveal-d5"><div class="inc-icon"><i data-lucide="mail" aria-hidden="true"></i></div><h3>הזמנה דיגיטלית</h3><p>מקבלים הזמנה מעוצבת לשלוח להורי המוזמנים</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="sec sec-light">
+    <div class="sec-inner">
+        <div class="vs-section">
+            <h3 class="reveal">אתם רק מביאים <em>עוגה</em>.<br>אנחנו עושים את <em>הכל</em>.</h3>
+            <p class="reveal reveal-d1">שכחו מלרוץ בין חנויות, להזמין אוכל, לקשט, לנקות...<br>אנחנו מטפלים בכל פרט. אתם מגיעים, נהנים, והולכים הביתה.</p>
+            <div class="vs-boxes">
+                <div class="vs-box vs-box-good reveal reveal-d1">
+                    <h4>GAME OVER</h4>
+                    <div class="vs-item"><span class="vs-icon">✓</span>מקשטים את החדר והסניף בהתאמה לעיצוב</div>
+                    <div class="vs-item"><span class="vs-icon">✓</span>חטיפים ושתייה חופשית ופיצה</div>
+                    <div class="vs-item"><span class="vs-icon">✓</span>מנהל אירוע מסור מלווה אתכם</div>
+                    <div class="vs-item"><span class="vs-icon">✓</span>עשרות מכונות ארקייד</div>
+                    <div class="vs-item"><span class="vs-icon">✓</span>הזמנה דיגיטלית לשלוח להורים</div>
+                    <div class="vs-item"><span class="vs-icon">✓</span>אנחנו מנקים. אתם הולכים</div>
+                </div>
+                <div class="vs-box vs-box-bad reveal reveal-d2">
+                    <h4>מקומות אחרים</h4>
+                    <div class="vs-item"><span class="vs-icon">✗</span>אתם מקשטים לבד</div>
+                    <div class="vs-item"><span class="vs-icon">✗</span>משלמים על כל דבר בנפרד</div>
+                    <div class="vs-item"><span class="vs-icon">✗</span>אתם לבד עם 15 ילדים</div>
+                    <div class="vs-item"><span class="vs-icon">✗</span>ציוד ישן ולא מתוחזק</div>
+                    <div class="vs-item"><span class="vs-icon">✗</span>בלי הזמנות — אתם מסתדרים</div>
+                    <div class="vs-item"><span class="vs-icon">✗</span>לנקות אחרי? בהצלחה</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="sec sec-light">
+    <div class="sec-inner">
+        <h2 class="sec-title reveal">GAME OVER לעומת מקומות אחרים</h2>
+        <p class="sec-sub reveal reveal-d1">ההבדל ברור כשמשווים</p>
+        <table class="cmp-table reveal reveal-d2">
+            <thead><tr><th></th><th class="us">GAME OVER</th><th class="them">מקומות אחרים</th></tr></thead>
+            <tbody>
+                <tr><td>ארגון האירוע</td><td><span class="yes">✓</span> אנחנו עושים הכל</td><td><span class="no">✗</span> אתם מארגנים לבד</td></tr>
+                <tr><td>ניקיון המקום</td><td><span class="yes">✓</span> נקי, מתוחזק, מודרני</td><td><span class="no">✗</span> ציוד ישן ולא נקי</td></tr>
+                <tr><td>אוכל ושתייה</td><td><span class="yes">✓</span> חטיפים ושתייה חופשית ופיצה</td><td><span class="no">✗</span> משלמים על כל דבר</td></tr>
+                <tr><td>ניהול האירוע</td><td><span class="yes">✓</span> מנהל אירוע מסור</td><td><span class="no">✗</span> אתם לבד עם 15 ילדים</td></tr>
+                <tr><td>מתנה לאחרי</td><td><span class="yes">✓</span> כרטיס ביקור חוזר חינם</td><td><span class="no">✗</span> כלום</td></tr>
+                <tr><td>נגישות</td><td><span class="yes">✓</span> קניון ממוזג עם חניה</td><td><span class="no">✗</span> לוגיסטיקה מסובכת</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="sec sec-dark">
+    <div class="sec-inner">
+        <h2 class="sec-title reveal">איך זה עובד?</h2>
+        <p class="sec-sub reveal reveal-d1">4 צעדים פשוטים ליום הולדת מושלם</p>
+        <div class="steps-row">
+            <div class="step reveal reveal-d1"><div class="step-circle">1</div><div class="step-ic"><i data-lucide="clipboard-pen" aria-hidden="true"></i></div><h3>משאירים פרטים</h3><p>ממלאים טופס ומקבלים שיחה תוך דקות</p></div>
+            <div class="step reveal reveal-d2"><div class="step-circle">2</div><div class="step-ic"><i data-lucide="calendar" aria-hidden="true"></i></div><h3>בוחרים תאריך וסניף</h3><p>קובעים תאריך ובוחרים סניף</p></div>
+            <div class="step reveal reveal-d3"><div class="step-circle">3</div><div class="step-ic"><i data-lucide="cake" aria-hidden="true"></i></div><h3>מגיעים עם עוגה</h3><p>זה באמת כל מה שצריך להביא</p></div>
+            <div class="step reveal reveal-d4"><div class="step-circle">4</div><div class="step-ic"><i data-lucide="party-popper" aria-hidden="true"></i></div><h3>אנחנו עושים את השאר</h3><p>אוכל, משחקים, קישוטים — הכל עלינו</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="sec sec-dark">
+    <div class="sec-inner">
+        <h2 class="sec-title reveal">הציצו פנימה</h2>
+        <p class="sec-sub reveal reveal-d1">ככה נראה יום הולדת ב-GAME OVER</p>
+        <div class="gal-grid">
+            <div class="gal-item reveal reveal-d1"><img src="Images/475328224_17894261136150335_3862051142677640048_n.jpg" alt="ילדים חוגגים יום הולדת במשחקיית GAME OVER"></div>
+            <div class="gal-item reveal reveal-d2"><img src="Images/476142902_17895257520150335_372497690850065485_n.jpg" alt="חדר יום הולדת מעוצב ב-GAME OVER"></div>
+            <div class="gal-item reveal reveal-d3"><img src="Images/480949302_17897234910150335_823365993114622632_n.jpg" alt="מכונות ארקייד ומשחקים ב-GAME OVER"></div>
+            <div class="gal-item reveal reveal-d4"><img src="Images/518313876_122182395986326828_7868823664593536286_n.jpg" alt="אווירת חגיגה במתחם GAME OVER"></div>
+        </div>
+    </div>
+</section>
+
+<section class="sec sec-light">
+    <div class="sec-inner">
+        <h2 class="sec-title reveal">מה ההורים אומרים</h2>
+        <p class="sec-sub reveal reveal-d1">הצטרפו לאלפי הורים מרוצים</p>
+        <div class="video-testimonials">
+            <div class="video-card"><wistia-player media-id="fv6amrlo3n" aspect="0.5625"></wistia-player></div>
+            <div class="video-card"><wistia-player media-id="0xodg8utqw" aspect="0.5625"></wistia-player></div>
+            <div class="video-card"><wistia-player media-id="zr7tkennap" aspect="0.5625"></wistia-player></div>
+        </div>
+        <div class="reviews-grid">
+            <div class="review reveal reveal-d1">
+                <div class="review-stars"><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i></div>
+                <div class="review-body">"הארגון היה מושלם! הגענו עם עוגה ולא עשינו כלום. מנהלת האירוע הייתה מדהימה, הילדים לא הפסיקו לצחוק. בהחלט חוגגים שוב!"</div>
+                <div class="review-author"><div class="review-avatar"><i class="ic" data-lucide="user" aria-hidden="true"></i></div><div><div class="review-name">שירה מ.</div><div class="review-detail">יום הולדת 8, עזריאלי גבעתיים</div></div></div>
+            </div>
+            <div class="review reveal reveal-d2">
+                <div class="review-stars"><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i></div>
+                <div class="review-body">"היום הולדת הכי קל שארגנתי בחיים. ב-79 שקל קיבלנו הכל — פיצה, חטיפים, שתייה, משחקים, חדר מעוצב. והילדים קיבלו כרטיס לביקור חוזר! גאוני."</div>
+                <div class="review-author"><div class="review-avatar"><i class="ic" data-lucide="user" aria-hidden="true"></i></div><div><div class="review-name">יעל כ.</div><div class="review-detail">יום הולדת 7, קניון TLV</div></div></div>
+            </div>
+            <div class="review reveal reveal-d3">
+                <div class="review-stars"><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i><i class="ic" data-lucide="star" aria-hidden="true"></i></div>
+                <div class="review-body">"ההורים של החברים לא הפסיקו לשאול אותי איפה חגגנו. המקום נקי, מאורגן, ומחיר הוגן. כבר קבענו גם ליום הולדת של הבן הקטן."</div>
+                <div class="review-author"><div class="review-avatar"><i class="ic" data-lucide="user" aria-hidden="true"></i></div><div><div class="review-name">רון א.</div><div class="review-detail">יום הולדת 10, קניון הזהב</div></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="sec bonus">
+    <div class="sec-inner">
+        <h2 class="reveal"><i class="ic" data-lucide="gift" aria-hidden="true"></i> בונוס: כרטיס ביקור חוזר</h2>
+        <p class="reveal reveal-d1">כל מוזמן ליום ההולדת מקבל כרטיס עם קרדיט חינמי לביקור נוסף ב-GAME OVER!<br>ככה הכיף לא נגמר ביום האירוע.</p>
+        <div class="bonus-tag reveal reveal-d2"><i class="ic" data-lucide="ticket" aria-hidden="true"></i> כרטיס ביקור חוזר חינם לכל מוזמן!</div>
+    </div>
+</section>
+
+<section class="sec sec-dark">
+    <div class="sec-inner">
+        <h2 class="sec-title reveal">3 סניפים לימי הולדת</h2>
+        <p class="sec-sub reveal reveal-d1">בחרו את הסניף הקרוב אליכם</p>
+        <nav class="locs-grid" aria-label="סניפי GAME OVER לימי הולדת">
+            <div class="loc reveal reveal-d1"><div class="loc-ic"><i data-lucide="map-pin" aria-hidden="true"></i></div><div class="loc-name">אשדוד</div><div class="loc-mall">קניון אשדוד</div></div>
+            <div class="loc reveal reveal-d1"><div class="loc-ic"><i data-lucide="map-pin" aria-hidden="true"></i></div><div class="loc-name">כרמי גת</div><div class="loc-mall">קניון כרמי גת</div></div>
+            <div class="loc reveal reveal-d2"><div class="loc-ic"><i data-lucide="map-pin" aria-hidden="true"></i></div><div class="loc-name">מבשרת ציון</div><div class="loc-mall">קניון מבשרת ציון</div></div>
+        </nav>
+    </div>
+</section>
+
+<section class="final-cta">
+    <div class="sec-inner">
+        <h2 class="reveal">תנו לילד שלכם את יום ההולדת<br>שתמיד חלם עליו!</h2>
+        <p class="reveal reveal-d1">79 ₪ לילד · הכל כלול — חטיפים, שתייה חופשית ופיצה</p>
+        <a href="#lead-form" class="cta-big reveal reveal-d2"><i class="ic" data-lucide="cake" aria-hidden="true"></i> שריינו יום הולדת!</a>
+    </div>
+</section>
+
+</main>
+
+<footer>GAME OVER · רשת משחקיות · כל הזכויות שמורות © 2026</footer>
+
+<script>
+lucide.createIcons();
+function checkReveals(){var reveals=document.querySelectorAll('.reveal:not(.visible)');var vh=window.innerHeight;reveals.forEach(function(el){var rect=el.getBoundingClientRect();if(rect.top<vh-40){el.classList.add('visible')}});}
+window.addEventListener('scroll',checkReveals,{passive:true});
+window.addEventListener('load',checkReveals);
+checkReveals();
+setTimeout(checkReveals,100);
+setTimeout(checkReveals,500);
+setTimeout(function(){document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){el.classList.add('visible')})},2000);
+function handleSubmit(e){
+    e.preventDefault();
+    var card=document.getElementById('lead-form');
+    card.classList.add('submitted');
+    lucide.createIcons({nameAttr:'data-lucide'});
+    fireConfetti();
+}
+function fireConfetti(){
+    var container=document.createElement('div');
+    container.className='confetti-explosion';
+    document.body.appendChild(container);
+    var colors=['#FF2D78','#FFD23F','#8B5CF6','#00D4FF','#34D399','#FF6B6B','#FF9F43','#FFFFFF'];
+    for(var i=0;i<80;i++){
+        var piece=document.createElement('span');
+        var color=colors[Math.floor(Math.random()*colors.length)];
+        var size=Math.random()*10+5;
+        var startX=50+((Math.random()-0.5)*20);
+        var startY=50+((Math.random()-0.5)*10);
+        var endX=(Math.random()-0.5)*200;
+        var endY=(Math.random()-0.5)*200-100;
+        var rotation=Math.random()*720-360;
+        var duration=1+Math.random()*1.5;
+        var delay=Math.random()*0.3;
+        piece.style.cssText='background:'+color+';width:'+size+'px;height:'+(size*0.6)+'px;left:'+startX+'%;top:'+startY+'%;animation-duration:'+duration+'s;animation-delay:'+delay+'s;border-radius:'+(Math.random()>0.5?'50%':'2px')+';';
+        piece.style.setProperty('--ex',endX+'vw');
+        piece.style.setProperty('--ey',endY+'vh');
+        piece.style.setProperty('--er',rotation+'deg');
+        piece.style.animation='none';
+        container.appendChild(piece);
+    }
+    requestAnimationFrame(function(){
+        container.querySelectorAll('span').forEach(function(p){
+            var ex=p.style.getPropertyValue('--ex');
+            var ey=p.style.getPropertyValue('--ey');
+            var er=p.style.getPropertyValue('--er');
+            var dur=parseFloat(p.style.animationDuration)||1.5;
+            p.animate([
+                {transform:'translate(0,0) rotate(0deg) scale(1)',opacity:1},
+                {transform:'translate('+ex+','+ey+') rotate('+er+') scale(0)',opacity:0}
+            ],{duration:dur*1000,easing:'cubic-bezier(.25,.46,.45,.94)',fill:'forwards',delay:parseFloat(p.style.animationDelay)*1000||0});
+        });
+    });
+    setTimeout(function(){container.remove()},3000);
+}
+</script>
+<div class="sticky-cta" id="sticky-cta"><a href="#lead-form" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'});return false"><i class="ic" data-lucide="party-popper" aria-hidden="true"></i> שריינו יום הולדת!</a></div>
+<script>
+lucide.createIcons({nameAttr:'data-lucide'});
+(function(){var bar=document.getElementById('sticky-cta'),form=document.getElementById('lead-form');
+function checkSticky(){var rect=form.getBoundingClientRect();bar.classList.toggle('show',rect.bottom<0||rect.top>window.innerHeight);}
+window.addEventListener('scroll',checkSticky,{passive:true});checkSticky();})();
+</script>
+</body>
+</html>
